@@ -66,10 +66,11 @@ namespace Netlist {
     {}
 
     Term::~Term(){
-        //placeholder
+        
         if(net_)
             net_->remove(&node_); 
         net_ = nullptr;
+        
     }
 
     //prédicats (les autres sont inlines)

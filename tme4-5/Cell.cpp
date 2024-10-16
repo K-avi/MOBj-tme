@@ -1,5 +1,6 @@
 // -*- explicit-buffer-name: "Cell.cpp<M1-MOBJ/4-5>" -*-
 
+#include <cstddef>
 #include  <cstdlib>
 #include <ostream>
 #include  "Cell.hpp"
@@ -51,9 +52,21 @@ namespace Netlist {
       }
     }
 
-    //while ( not nets_     .empty() ) delete *nets_     .begin();
+   /*while ( not nets_     .empty() ) delete *nets_     .begin();
     while ( not instances_.empty() ) delete *instances_.begin();
-    //while ( not terms_    .empty() ) delete *terms_    .begin();
+    while ( not terms_    .empty() ) delete *terms_    .begin();*/
+
+    for(size_t i = 0 ; i < nets_.size(); i++){
+      delete nets_[i];
+    }
+
+    for(size_t i = 0 ; i < instances_.size(); i++){
+      delete instances_[i];
+    }
+    for(size_t i = 0 ; i < terms_.size(); i++){
+      delete terms_[i];
+    }
+
   }
 
 

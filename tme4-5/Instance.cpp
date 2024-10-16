@@ -29,12 +29,15 @@ namespace Netlist {
     }
 
     Instance::~Instance      ()
-    {
+    {   
+        
         //cout << "haaaaaaaai" << terms_.size() << endl;
         for(size_t i = 0 ; i < terms_.size(); i++){
             //cout << "terms[i]" << (void*) terms_[i] << endl;
-            delete terms_[i];
-            
+            if(terms_[i]){
+               delete terms_[i];
+               terms_[i] = nullptr;
+            }
         }
     }
 

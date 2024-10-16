@@ -62,9 +62,9 @@ int main ( int argc, char* argv[] )
  
   
   delete halfadder; 
- // delete xor2;
- // delete and2;
-  //delete or2;
+  delete xor2;
+  delete and2;
+  delete or2;
 
   return 0;
 }
