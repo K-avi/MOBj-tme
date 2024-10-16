@@ -1,0 +1,6 @@
+Nous devons implementer les classes Term, Net et Instance
+
+
+todo : 
+
+Net.cpp -> destructeur 
