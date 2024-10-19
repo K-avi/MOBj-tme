@@ -5,7 +5,7 @@
 
 namespace Netlist {
 
-  using namespace std;
+    using namespace std;
 
 
-}  // Netlist namespace.
+}    // Netlist namespace.
