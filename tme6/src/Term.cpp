@@ -131,14 +131,13 @@ namespace Netlist {
                 Direction d = toDirection(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"direction")));
                 
 
-                cout << "attribut x : " << xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"x")  << endl ;
 
                 int x = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"x")));
                 int y = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"y")));
 
                 Term* ret = new Term(cell, name,d);
 
-                //ret->setPosition(Point(x,y));
+                ret->setPosition(Point(x,y));
                 return ret;
         }// a faire : traitement d'erreur 
 };

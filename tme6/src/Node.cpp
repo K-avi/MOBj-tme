@@ -54,19 +54,22 @@ namespace Netlist {
         string term =  xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"term"));
         size_t id = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"id")));
         
-        int x = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"x")));
-        int y = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"y")));
+        //pas dans la version de halfadder du tme 6, étrange?
+        //int x = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"x")));
+        //int y = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"y")));
 
         xmlChar* instance = xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"term");
 
         Node* node = new Node(net->getCell()->getTerm(term), id);
-        node->setPosition(x,y);
+        //node->setPosition(x,y);
 
         if(instance != nullptr){
             string inststr = xmlCharToString(instance);
 
             Instance* inst = net->getCell()->getInstance(inststr); //tester si non null 
-            inst->add(node->getTerm());
+            if(inst){
+                inst->add(node->getTerm());
+            }
         }
 
         net->add(node);
