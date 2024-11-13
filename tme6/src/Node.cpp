@@ -58,25 +58,41 @@ namespace Netlist {
         //int x = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"x")));
         //int y = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"y")));
 
-        xmlChar* instance = xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"term");
-
-        Node* node = new Node(net->getCell()->getTerm(term), id);
-        //node->setPosition(x,y);
-
+        xmlChar* instance = xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"instance");
+        
         if(instance != nullptr){
-            string inststr = xmlCharToString(instance);
+            string inst_name = xmlCharToString(instance);
+         //   cout << "inst name is : " << inst_name << endl ; 
+            Instance* inst_ptr = net->getCell()->getInstance(inst_name);
+            if(inst_ptr){
+                Term *t = inst_ptr->getTerm(term);
+                
+                if(t){
+                    Node * n = new Node(t, id) ;
+                    net->add(n);
+                }else{
+                  //  cout << "sortie 1 Node::fromxml" << endl ; 
+                    return false; 
+                }
 
-            Instance* inst = net->getCell()->getInstance(inststr); //tester si non null 
-            if(inst){
-                inst->add(node->getTerm());
+            }else{
+               // cout << "sortie 2 Node::fromxml" << endl ; 
+                return false ;
+            }
+        
+        }else{
+            Term * t =  net->getCell()->getTerm(term);
+            if(t){
+                Node * n = new Node(t, id) ;
+                net->add(n);
+            }else{
+               // cout << "sortie 3 Node::fromxml" << endl ; 
+                return false ; 
             }
         }
-
-        net->add(node);
-
+       // cout << "sortie 4 Node::fromxml" << endl ; 
         return true ; 
     }
-
 
 
 }    // Netlist namespace.

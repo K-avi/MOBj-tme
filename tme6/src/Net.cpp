@@ -130,41 +130,35 @@ namespace Netlist {
 
                                   
                         const xmlChar* nodeName = xmlTextReaderConstLocalName( readerptr );
-                        cout << readerptr << endl ; 
-                        cout << "ex " << nodeName << endl ;
+                       // cout << "ex " << nodeName << endl ;
 
                         switch(state){
                                 case BeginNet : {
-                                        cout << "entry 1" << endl ;
+                                      //  cout << "entry 1" << endl ;
                                         string netName = xmlCharToString( xmlTextReaderGetAttribute( readerptr, (const xmlChar*)"name" ) );
                                         if (not netName.empty()) {
                                                 net = new Net(c,netName, Term::External);//quand le net est-il internal ? a corriger.
                                                 state = BeginTerms ;
                                                 continue;
                                         }
-                                        cout << "exit 1" << endl ;
+                                       // cout << "exit 1" << endl ;
                                         break;
                                 }
-
-                                
+                                      
                                 case BeginTerms : {
                                         if(nodeName == nodeTag  and (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){          
-                                                cout << "1" << endl ;
-                                                if(Node::fromXml(net, readerptr)) continue;
+                                                //cout << "node case 1" << endl ;
+                                                if(Node::fromXml(net, readerptr)) {  continue; }
                                         }else if( nodeName == netTag ){
-                                                cout << "2" << endl ;
-                                                state = EndNet ;
-                                                continue;
+                                                if ((xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_END_ELEMENT) ) {
+                                                //  xmlTextReaderRead(readerptr);
+                                                     //  cout << "exit end net FOUDNFFFFFs " << endl ; 
+                                                        return net ;
+                                                }
+                                                //cout << "exit 3" << endl ;
+                                                break;
                                         }
-                                        cout << "exit2";
-                                        break;
-                                }
-
-                                case EndNet : {
-                                        if ( (nodeName == netTag) and (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_END_ELEMENT) ) {
-                                             continue;
-                                        }
-                                        cout << "exit 3";
+                                       // cout << "exit 2 at "  << nodeName << " nettag"  << endl ;
                                         break;
                                 }
                                 
