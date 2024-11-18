@@ -1,6 +1,6 @@
 #include "Symbol.hpp"
 #include "Term.hpp"
-#include "TermShape.hpp"
+#include "Shape.hpp"
 
 namespace Netlist {
 
@@ -12,17 +12,19 @@ namespace Netlist {
 
     Cell * Symbol::getCell() const {return owner_;}
 
+    //TODO : j'ai zero idée de ce que doit return cette fonction
     //Box Symbol::getBoundingBox() const {}
 
     Point Symbol::getTermPosition(Term * t) const{
         return t->getPosition();
     }
 
+    //TODO : j'ai zero idée de ce que doit return cette fonction
     TermShape* Symbol::getTermShape(Term * t) const {
-        Point p = t->getPosition();
+        /*Point p = t->getPosition();
         string name = t->getName();
         
-        return new TermShape(this, name, p.getX(), p.getY());
+        return new TermShape(this, name, p.getX(), p.getY());*/
 
     }
 
