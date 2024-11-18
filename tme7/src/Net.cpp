@@ -2,6 +2,7 @@
 #include "Indentation.hpp"
 #include "XmlUtil.hpp"
 #include "Node.hpp"
+#include "Line.hpp"
 #include <cstddef>
 #include <ostream>
 
@@ -26,19 +27,18 @@ namespace Netlist {
         Net::~Net(){
                 for( auto node : nodes_){
                         if(node != nullptr){
-                                Term * t = node->getTerm();
-
-                                if(t->getNet() == this){
-                                        t->setNet(nullptr);
-
-                                }else{//error case
-                                        cerr << "Net::~Net() t's Net should be : "
-                                                 << (void*)this << "but is" << (void*) t->getNet() << endl;
-                                }
-                        }
-                }
+                        	//check if its a nodeTerm using dynamic_cast
+                        	if(NodeTerm* termNode = dynamic_cast<NodeTerm*>(node)){
+                        		Term * t = termNode->getTerm();
+                        		if(t->getNet() == this){
+                                        	t->setNet(nullptr);
+                        		}
+                        	}
+               	 	}
             
+        	}
         }
+        
 
         //accessseurs
 
@@ -116,7 +116,7 @@ namespace Netlist {
         Net* Net::fromXml(Cell* c, xmlTextReaderPtr readerptr){
                 const xmlChar* netTag  = xmlTextReaderConstString( readerptr, (const xmlChar*)"net" );
                 const xmlChar* nodeTag = xmlTextReaderConstString( readerptr, (const xmlChar*)"node" );
-                const xmlChar* nodeTag = xmlTextReaderConstString( readerptr, (const xmlChar*)"line" );
+                const xmlChar* lineTag = xmlTextReaderConstString( readerptr, (const xmlChar*)"line" );
 
                 typedef enum NetState {
                         BeginNet,
@@ -173,17 +173,28 @@ namespace Netlist {
                                         if(nodeName == nodeTag  and (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){          
                                                 //cout << "node case 1" << endl ;
                                                 if(Node::fromXml(net, readerptr)) {  continue; }
+                                        }else if(nodeName == lineTag){
+                                        	state = BeginLines;
+                                        	continue;
                                         }else if( nodeName == netTag ){
                                                 if ((xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_END_ELEMENT) ) {
-                                                //  xmlTextReaderRead(readerptr);
-                                                     //  cout << "exit end net FOUDNFFFFFs " << endl ; 
                                                         return net ;
                                                 }
-                                                //cout << "exit 3" << endl ;
                                                 break;
                                         }
-                                       // cout << "exit 2 at "  << nodeName << " nettag"  << endl ;
                                         break;
+                                }
+                                
+                                case BeginLines : {
+                                	if(nodeName == lineTag and (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
+                                		if(Line::fromXml(net, readerptr)) {continue ;}
+                                	}else if( nodeName == netTag ){
+                                                if ((xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_END_ELEMENT) ) {
+                                                        return net ;
+                                                }
+                                                break;
+                                        }
+                                	break;
                                 }
                                 
                                 default: {
