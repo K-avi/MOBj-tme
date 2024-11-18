@@ -75,7 +75,7 @@ namespace Netlist{
     
     
     //TermShape Methods
-    TermShape::TermShape(Symbol * s, string name, int x1, int y1, NameAlign align_): Shape(s), term_(nullptr), x1_(x1), y1_(y1), align_(align){
+    TermShape::TermShape(Symbol * s, string name, int x1, int y1, NameAlign align): Shape(s), term_(nullptr), x1_(x1), y1_(y1), align_(align){
         s->add(this);
         Cell * cell = owner_->getCell();
         term_ = cell->getTerm(name);
@@ -88,17 +88,32 @@ namespace Netlist{
     }*/
     
     TermShape::NameAlign TermShape::toNameAlign(string s){
-        switch(s){
-            case "top_left" : return TopLeft;
-            case "top_right" : return TopRight;
-            case "bottom_left" : return BottomLeft;
-            case "bottom_right" : return BottomRight;
-        }
+        if(s == "top_left")
+        	return TopLeft;
+        else if (s == "top_left")
+		return TopRight;
+	else if (s == "bottom_left")
+		return BottomLeft;
+        else if (s == "bottom_right")
+        	return BottomRight;
         cerr << "TermShape::toNameAlign string align invalide: " << s << endl; 
     }
     
     Term * TermShape::getTerm() const {return term_;}
     int TermShape::getX1() const{return x1_;}
     int TermShape::getY1() const{return y1_;}
+    
+    //EllipseShape Methods
+    EllipseShape::EllipseShape(Symbol * s, const Box & b) : Shape(s), box_(b){}
+    
+    EllipseShape::~EllipseShape(){}
+    
+    Box EllipseShape::getBoundingBox() const {return box_;}
 
+    //ArcShape Methods
+    ArcShape::ArcShape(Symbol * s, const Box & b, int start, int span) : Shape(s), box_(b), start_(start), span_(span){}
+    
+    ArcShape::~ArcShape(){}
+    
+    Box ArcShape::getBoundingBox() const {return box_;}
 }
