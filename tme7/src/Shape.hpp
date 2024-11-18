@@ -12,6 +12,7 @@ namespace Netlist{
             Shape(Symbol *s);
             ~Shape();
             virtual Box getBoundingBox() const = 0;
+            static Shape* fromXml(Symbol* owner, xmlTextReaderPtr readerptr);
         private:
             Symbol * owner_;
     };
@@ -38,15 +39,20 @@ namespace Netlist{
     
     class TermShape : public Shape{
         public:
-            TermShape(Symbol*, std::string, int, int);
+            enum NameAlign{TopLeft = 1, TopRight, BottomLeft, BottomRight};	
+        
+            TermShape(Symbol*, std::string, int, int, NameAlign);
             ~TermShape();
             virtual Box getBoundingBox() const = 0;
+            NameAlign toNameAlign(std::string);
+            
             Term * getTerm() const;
             int getX1() const;
             int getY1() const;
         private:
             Symbol * owner_;
             Term * term_;
+            NameAlign align_;
             int x1_,y1_;
 
     };
