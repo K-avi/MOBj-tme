@@ -116,10 +116,12 @@ namespace Netlist {
         Net* Net::fromXml(Cell* c, xmlTextReaderPtr readerptr){
                 const xmlChar* netTag  = xmlTextReaderConstString( readerptr, (const xmlChar*)"net" );
                 const xmlChar* nodeTag = xmlTextReaderConstString( readerptr, (const xmlChar*)"node" );
+                const xmlChar* nodeTag = xmlTextReaderConstString( readerptr, (const xmlChar*)"line" );
 
                 typedef enum NetState {
                         BeginNet,
-                        BeginTerms, 
+                        BeginTerms, //TODO: Rename BeginTerms to BeginNodes
+                        BeginLines,
                         EndNet
                 }NetState;
 
