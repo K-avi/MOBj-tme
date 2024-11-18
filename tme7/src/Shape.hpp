@@ -21,7 +21,7 @@ namespace Netlist{
         public:
             BoxShape(Symbol *, const Box &);
             ~BoxShape();
-            virtual Box getBoundingBox() const = 0;
+            virtual Box getBoundingBox() const;
         private:
             Box box_;
     };
@@ -30,7 +30,7 @@ namespace Netlist{
         public :
             LineShape(Symbol *, const Line &, int, int, int, int);
             ~LineShape();
-            virtual Box getBoundingBox() const = 0;
+            virtual Box getBoundingBox() const;
         
         private:
             int x1_, y1_, x2_, y2_;
@@ -43,7 +43,7 @@ namespace Netlist{
         
             TermShape(Symbol*, std::string, int, int, NameAlign);
             ~TermShape();
-            virtual Box getBoundingBox() const = 0;
+            virtual Box getBoundingBox() const;
             NameAlign toNameAlign(std::string);
             
             Term * getTerm() const;
