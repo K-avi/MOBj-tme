@@ -1,9 +1,9 @@
 // -*- explicit-buffer-name: "Line.cpp<M1-MOBJ/7>" -*-
 
-#include "XmlUtil.h"
-#include "Line.h"
-#include "Cell.h"
-#include "Net.h"
+#include "XmlUtil.hpp"
+#include "Line.hpp"
+#include "Cell.hpp"
+#include "Net.hpp"
 
 
 namespace Netlist {
