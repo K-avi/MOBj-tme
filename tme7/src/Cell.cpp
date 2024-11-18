@@ -2,11 +2,11 @@
 
 #include  <cstdlib>
 #include  <fstream>
-#include  "XmlUtil.h"
-#include  "Cell.h"
-#include  "Term.h"
-#include  "Net.h"
-#include  "Instance.h"
+#include  "XmlUtil.hpp"
+#include  "Cell.hpp"
+#include  "Term.hpp"
+#include  "Net.hpp"
+#include  "Instance.hpp"
 
 
 namespace Netlist {
