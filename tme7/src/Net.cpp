@@ -120,7 +120,7 @@ namespace Netlist {
 
                 typedef enum NetState {
                         BeginNet,
-                        BeginTerms, //TODO: Rename BeginTerms to BeginNodes
+                        BeginNodes,
                         BeginLines,
                         EndNet
                 }NetState;
@@ -162,14 +162,14 @@ namespace Netlist {
                                         string netName = xmlCharToString( xmlTextReaderGetAttribute( readerptr, (const xmlChar*)"name" ) );
                                         if (not netName.empty()) {
                                                 net = new Net(c,netName, Term::External);//quand le net est-il internal ? a corriger.
-                                                state = BeginTerms ;
+                                                state = BeginNodes ;
                                                 continue;
                                         }
                                        // cout << "exit 1" << endl ;
                                         break;
                                 }
                                       
-                                case BeginTerms : {
+                                case BeginNodes : {
                                         if(nodeName == nodeTag  and (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){          
                                                 //cout << "node case 1" << endl ;
                                                 if(Node::fromXml(net, readerptr)) {  continue; }
