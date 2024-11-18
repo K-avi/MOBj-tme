@@ -106,7 +106,10 @@ namespace Netlist {
                 o << indent++ << "<net name=\"" << name_ << "\" type=\"" << Term::toString(type_) << "\"/>" <<    endl;
 
                 for(auto & n : nodes_)
-                        n->toXml(o);                
+                        n->toXml(o);   
+                
+                for(auto & l : lines_)
+                	l->toXml(o);             
 
                 o << --indent << "</net>" << endl;
         }
