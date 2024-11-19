@@ -41,6 +41,7 @@ namespace Netlist{
             int x1_, y1_, x2_, y2_;
     };
     
+    //TODO : a quel moment on rempli term_ ?????
     class TermShape : public Shape{
         public:
             enum NameAlign{TopLeft = 1, TopRight, BottomLeft, BottomRight};	

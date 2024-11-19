@@ -126,7 +126,7 @@ namespace Netlist{
     
     
     //TermShape Methods
-    TermShape::TermShape(Symbol * s, string name, int x1, int y1, NameAlign align): Shape(s), term_(nullptr), x1_(x1), y1_(y1), align_(align){
+    TermShape::TermShape(Symbol * s, string name, int x1, int y1, NameAlign align): Shape(s), x1_(x1), y1_(y1), align_(align){
         s->add(this);
         Cell * cell = owner_->getCell();
         term_ = cell->getTerm(name);
@@ -154,6 +154,7 @@ namespace Netlist{
     Term * TermShape::getTerm() const {return term_;}
     int TermShape::getX1() const{return x1_;}
     int TermShape::getY1() const{return y1_;}
+    
     
     TermShape * TermShape::fromXml(Symbol * owner, xmlTextReaderPtr reader){
         const xmlChar* termTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"term" );
