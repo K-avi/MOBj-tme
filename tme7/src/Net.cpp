@@ -60,6 +60,10 @@ namespace Netlist {
                 }
                 return nodes_.size();
         }//
+        
+        Node * Net::getNode(int i) const {
+        	return nodes_[i];
+        }
 
         //modificateurs Node
         void    Net::add        ( Node* n ){
@@ -113,8 +117,6 @@ namespace Netlist {
 
                 o << --indent << "</net>" << endl;
         }
-
-        //TODO : Modifier fromXml pour ajouter les Lines.
 
         Net* Net::fromXml(Cell* c, xmlTextReaderPtr readerptr){
                 const xmlChar* netTag  = xmlTextReaderConstString( readerptr, (const xmlChar*)"net" );
