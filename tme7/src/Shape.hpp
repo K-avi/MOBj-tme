@@ -1,5 +1,8 @@
+#pragma once
+
 #include "Box.hpp"
 #include "Symbol.hpp"
+#include "XmlUtil.hpp"
 
 namespace Netlist{
 
@@ -30,13 +33,12 @@ namespace Netlist{
     
     class LineShape : public Shape{
         public :
-            LineShape(Symbol *, const Line &, int, int, int, int);
+            LineShape(Symbol *, int, int, int, int);
             ~LineShape();
             virtual Box getBoundingBox() const;
             static LineShape* fromXml(Symbol* owner, xmlTextReaderPtr readerptr);
         private:
             int x1_, y1_, x2_, y2_;
-            const Line & line_;
     };
     
     class TermShape : public Shape{
@@ -46,7 +48,7 @@ namespace Netlist{
             TermShape(Symbol*, std::string, int, int, NameAlign);
             ~TermShape();
             virtual Box getBoundingBox() const;
-            NameAlign toNameAlign(std::string);
+            static NameAlign toNameAlign(std::string);
             
             Term * getTerm() const;
             int getX1() const;
