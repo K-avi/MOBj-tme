@@ -6,10 +6,10 @@
 #include <memory>
 using namespace std;
 
-#include "Term.h"
-#include "Net.h"
-#include "Instance.h"
-#include "Cell.h"
+#include "Term.hpp"
+#include "Net.hpp"
+#include "Instance.hpp"
+#include "Cell.hpp"
 using namespace Netlist;
 
 
