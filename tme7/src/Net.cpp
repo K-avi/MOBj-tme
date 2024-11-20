@@ -118,6 +118,8 @@ namespace Netlist {
                 o << --indent << "</net>" << endl;
         }
 
+
+        //not tested, might be wrong (probably right tho bc i made it :D)
         Net* Net::fromXml(Cell* c, xmlTextReaderPtr readerptr){
                 const xmlChar* netTag  = xmlTextReaderConstString( readerptr, (const xmlChar*)"net" );
                 const xmlChar* nodeTag = xmlTextReaderConstString( readerptr, (const xmlChar*)"node" );
@@ -170,7 +172,6 @@ namespace Netlist {
                                                 state = BeginNodes ;
                                                 continue;
                                         }
-                                       // cout << "exit 1" << endl ;
                                         break;
                                 }
                                       

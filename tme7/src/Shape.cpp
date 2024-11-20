@@ -60,6 +60,10 @@ namespace Netlist{
     BoxShape::~BoxShape(){}
 
     Box BoxShape::getBoundingBox() const {return box_;}
+
+    void BoxShape::toXml(ostream & o){
+        o << "<box x1=\"" << box_.getX1()<<"\" y1=\""<< box_.getY1()<<"\" x2=\"" << box_.getX2() << "\" y2=\"" << box_.getY2()<<"\" />";
+    }
     
     BoxShape * BoxShape::fromXml(Symbol * owner, xmlTextReaderPtr reader){
         const xmlChar* boxTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"box" );
@@ -80,7 +84,6 @@ namespace Netlist{
                 << " (line:" << xmlTextReaderGetParserLineNumber(reader) << ")." << endl;
                 return NULL;
             }
-
             return new BoxShape(owner, Box(x1, y1, x2, y2));
         }
         
@@ -98,6 +101,12 @@ namespace Netlist{
         return Box(x1_, y1_, x2_, y2_);
     }
     
+    void LineShape::toXml(ostream& o) {
+
+        o << "<line x1=\"" << x1_ <<"\" y1=\""<< y1_ <<"\" x2=\"" << x2_  << "\" y2=\"" << y2_ <<"\" />";
+
+    }
+
     LineShape * LineShape::fromXml(Symbol * owner, xmlTextReaderPtr reader){
         const xmlChar* lineTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"line" );
         const xmlChar* nodeName = xmlTextReaderConstLocalName     ( reader );
@@ -134,28 +143,44 @@ namespace Netlist{
 
     TermShape::~TermShape(){}
 
-    /*Box TermShape::getBoundingBox() const{
-        return Box(x1_, y1_).inflate(5,5);
-    }*/
+    Box TermShape::getBoundingBox() const{
+        return Box(x1_, y1_, x1_, y1_).inflate(5);
+    }
     
-    TermShape::NameAlign TermShape::toNameAlign(string s){
+    TermShape::NameAlign TermShape::strToNameAlign(string s){
         if(s == "top_left")
-        	return TopLeft;
+            return TopLeft;
         else if (s == "top_right")
-		return TopRight;
+		    return TopRight;
 	    else if (s == "bottom_left")
-		return BottomLeft;
+		    return BottomLeft;
         else if (s == "bottom_right")
-        	return BottomRight;
+            return BottomRight;
+        else
+            throw invalid_argument("TermShape::strToNameAlign: Invalid string align: " + s);
+    }
 
-        throw invalid_argument("TermShape::toNameAlign: Invalid string align: " + s);
+    string TermShape::NameAlignToStr(TermShape::NameAlign n){
+        switch (n) {
+            case TopLeft : return "top_left" ; break; 
+            case TopRight : return "top_right";  break; 
+            case BottomLeft : return "bottom_left";  break; 
+            case BottomRight : return "bottom_right";  break; 
+            default: break;
+        }
     }
     
     Term * TermShape::getTerm() const {return term_;}
     int TermShape::getX1() const{return x1_;}
     int TermShape::getY1() const{return y1_;}
     
-    
+    void TermShape::toXml(ostream& o) {
+
+        o << "<term name=\"" << term_->getName() << "\" x1=\"" << x1_ <<"\" y1=\""<< y1_ << "align=\"" <<
+        NameAlignToStr(align_) <<"\"/>";
+
+    }
+
     TermShape * TermShape::fromXml(Symbol * owner, xmlTextReaderPtr reader){
         const xmlChar* termTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"term" );
         const xmlChar* nodeName = xmlTextReaderConstLocalName     ( reader );
@@ -186,9 +211,8 @@ namespace Netlist{
                 return NULL;
             }
             
-            return new TermShape(owner, termName, x1, y1, TermShape::toNameAlign(termAlignStr));     
-        }
-        
+            return new TermShape(owner, termName, x1, y1, TermShape::strToNameAlign(termAlignStr));     
+        } 
         return NULL;
     }
     
@@ -198,6 +222,13 @@ namespace Netlist{
     EllipseShape::~EllipseShape(){}
     
     Box EllipseShape::getBoundingBox() const {return box_;}
+
+    void EllipseShape::toXml(ostream& o) {
+
+        o << "<ellipse x1=\"" << box_.getX1() <<"\" y1=\""<< box_.getY1() <<"\" x2=\"" 
+        << box_.getX2()  << "\" y2=\"" << box_.getY2() <<"\" />";
+
+    }
     
     EllipseShape * EllipseShape::fromXml(Symbol * owner, xmlTextReaderPtr reader){
         const xmlChar* ellipseTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"ellipse" );
@@ -231,6 +262,14 @@ namespace Netlist{
     
     Box ArcShape::getBoundingBox() const {return box_;}
     
+    void ArcShape::toXml(ostream& o) {
+
+        o << "<arc x1=\"" << box_.getX1() <<"\" y1=\""<< box_.getY1() <<"\" x2=\"" 
+        << box_.getX2()  << "\" y2=\"" << box_.getY2() <<"\" start=\"" << start_ << "\" span =\"" << span_
+        <<"\"/>";
+
+    }
+
     ArcShape * ArcShape::fromXml(Symbol * owner, xmlTextReaderPtr reader){
         const xmlChar* arcTag  = xmlTextReaderConstString        ( reader, (const xmlChar*)"arc" );
         const xmlChar* nodeName = xmlTextReaderConstLocalName     ( reader );
