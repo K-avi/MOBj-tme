@@ -1,6 +1,7 @@
 #include "Term.hpp"
 #include "Cell.hpp"
 #include "Net.hpp"
+#include <iostream>
 #include <string>
 
 namespace Netlist {
@@ -11,6 +12,14 @@ namespace Netlist {
         //methodes de classe
         std::string Term::toString(Type t){
                 return (t == Internal) ? "Internal" : "External";
+        }
+
+        Term::Type Term::fromString(string s){
+                Term::Type t ;
+                if(s == "Internal") t = Internal ;
+                else if(s == "External" ) t = External ; 
+                else {cerr << "wrong value in Term::fromString arg is" << s <<endl; t = Internal ; }
+                return t;
         }
 
         std::string Term::toString(Direction d){
@@ -125,13 +134,10 @@ namespace Netlist {
         }
 
         Term* Term::fromXml(Cell* cell, xmlTextReaderPtr readerptr){
-     
 
                 string name = xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"name"));
                 Direction d = toDirection(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"direction")));
                 
-
-
                 int x = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"x")));
                 int y = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"y")));
 
