@@ -68,9 +68,10 @@ namespace Netlist {
 
         int status ; 
         Symbol * symbol = new Symbol(c);
+        cout << "[DEBUG::Symbol::fromXml] created symbol " << endl;
        // int type = xmlTextReaderNodeType(reader); 
         const xmlChar* nodeName;
-
+        
         while((status = xmlTextReaderRead(reader)) == 1){
             nodeName = xmlTextReaderConstLocalName( reader );
             cout << "[DEBUG::Symbol::fromXml] node name dans symbol : " << nodeName << endl;

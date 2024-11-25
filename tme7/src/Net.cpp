@@ -143,23 +143,22 @@ namespace Netlist {
         // int type = xmlTextReaderNodeType(reader); 
                 const xmlChar* nodeName;
 
-                do{
-                nodeName = xmlTextReaderConstLocalName( readerptr );
-                cout << "[DEBUG::Net::fromXml] dans net le node name est : " << nodeName << endl;
-                if(nodeName == nodeTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
-                        if(!Node::fromXml(net, readerptr)) 
-                            cerr << "[ERROR] Net::fromXml(): error while parsing node : " << nodeName << endl ;        
-                }else if(nodeName == lineTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
-                        if(!Line::fromXml(net, readerptr)) 
-                            cerr << "[ERROR] Net::fromXml(): error while parsing line node : " << nodeName << endl ; 
-                }else if(nodeName == netTag){
-                        //nothing to do ; either @ the beginning or the end 
-                }else{
-                        cerr << "placeholder error 1" << endl ; 
-                }
+                while ((status = xmlTextReaderRead(readerptr)) == 1) {
+                    nodeName = xmlTextReaderConstLocalName( readerptr );
+                    cout << "[DEBUG::Net::fromXml] dans net le node name est : " << nodeName << endl;
+                    if(nodeName == nodeTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
+                            if(!Node::fromXml(net, readerptr)) 
+                                cerr << "[ERROR] Net::fromXml(): error while parsing node : " << nodeName << endl ;        
+                    }else if(nodeName == lineTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
+                            if(!Line::fromXml(net, readerptr)) 
+                                cerr << "[ERROR] Net::fromXml(): error while parsing line node : " << nodeName << endl ; 
+                    }else if(nodeName == netTag){
+                            //nothing to do ; either @ the beginning or the end 
+                    }else{
+                            cerr << "placeholder error 1" << endl ; 
+                    }
                 
-                } while( !(status = xmlTextReaderRead(readerptr)) && 
-                        !(xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_END_ELEMENT) && (nodeName == netTag) );
+                }
         
                 if(status == -1){
                         cerr << "[ERROR] Net::fromXml(): Unexpected termination of the XML parser." << endl;

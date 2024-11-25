@@ -161,7 +161,8 @@ namespace Netlist {
                 Term * ret = new Term(cell, name, stringToDirection(direction));
                 ret->setPosition(x,y);
 		        
-                cout << "[DEBUG::Term::fromXml] term was created with name : " << name << " direction : " << direction << " and x, y : " << x << "," << y <<endl;
+                cout << "[DEBUG::Term::fromXml] term was created with name : " << name << " direction : " << direction << " and x, y : " << x 
+                << "," << y <<endl;
                 return ret;
         }
 };
