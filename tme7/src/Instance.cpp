@@ -116,26 +116,20 @@ namespace Netlist {
                     cout << "[ERROR] Instance::fromXml mastercell not found in list" << endl;
                 }
                 
-                cout << "[DEBUG::Instance::fromXml] name : " << name << ", masterCellName : " << masterCellName << endl;
                 int x,y;
                 
                 bool init = true;
                 
                 init &= xmlGetIntAttribute( readerptr, "x", x );
                 init &= xmlGetIntAttribute( readerptr, "y", y );
-                cout << "1"<<endl;
                 if(!init){
                     cerr << "[ERROR] Instance::fromXml(): Unknown coordinate : x :" << x << " y : "<< y
                      << " (line:" << xmlTextReaderGetParserLineNumber(readerptr) << ")." << endl;
                     return NULL;
                 }
                 
-                
-                cout << "2"<<endl;
                 Instance* ret =  new Instance(cell, mastercell, name);
-                cout << "3"<<endl;
                 ret->setPosition(Point(x,y));
-                cout << "4"<<endl;
                 cout << "[DEBUG::Instance::fromXml] created instance with name : " << name << ", masterCellName : " << masterCellName 
                 << ", x : " << x << ", y : "<< y << endl; 
                 return ret; 

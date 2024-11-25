@@ -59,7 +59,7 @@ namespace Netlist {
              << xmlTextReaderGetParserLineNumber(reader) << ")." << endl;
         return false;
       }
-
+      cout << "[DEBUG::Line::fromXml] created line w source : " << idSource << " and target : " << idTarget << endl;
       net->add( new Line(source,target) );
       return true;
     }

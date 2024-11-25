@@ -147,15 +147,18 @@ namespace Netlist {
                     nodeName = xmlTextReaderConstLocalName( readerptr );
                     cout << "[DEBUG::Net::fromXml] dans net le node name est : " << nodeName << endl;
                     if(nodeName == nodeTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
-                            if(!Node::fromXml(net, readerptr)) 
-                                cerr << "[ERROR] Net::fromXml(): error while parsing node : " << nodeName << endl ;        
+                        cout << "[DEBUG::Net::fromXml] found a node and creating it" << endl;
+                        if(!Node::fromXml(net, readerptr)) 
+                            cerr << "[ERROR] Net::fromXml(): error while parsing node : " << nodeName << endl ;        
                     }else if(nodeName == lineTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
-                            if(!Line::fromXml(net, readerptr)) 
-                                cerr << "[ERROR] Net::fromXml(): error while parsing line node : " << nodeName << endl ; 
-                    }else if(nodeName == netTag){
-                            //nothing to do ; either @ the beginning or the end 
-                    }else{
-                            cerr << "placeholder error 1" << endl ; 
+                        cout << "[DEBUG::Net::fromXml] found a line and creating it" << endl;
+                        if(!Line::fromXml(net, readerptr)) 
+                            cerr << "[ERROR] Net::fromXml(): error while parsing line node : " << nodeName << endl ; 
+                    }else if(nodeName == netTag && xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_END_ELEMENT){
+                        cout << "[DEBUG::Net::fromXml] end of net ??" << endl;
+                        break;
+                    }else if (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT) {
+                        cerr << "[ERROR??] Unrecognized element <" << nodeName << "> in net tags." << endl;
                     }
                 
                 }
