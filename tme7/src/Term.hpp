@@ -31,10 +31,10 @@ namespace Netlist{
                 public:
 
                 //methodes de classe
-                static std::string toString(Type); 
-                static std::string toString(Direction);
-                static Term::Type fromString(std::string) ;
-                static Direction toDirection(std::string); 
+                static std::string typeToString(Type); 
+                static std::string directionToString(Direction);
+                static Term::Type typeFromString(std::string) ;
+                static Direction stringToDirection(std::string); 
 
                 //constructeurs / destructeurs 
                 Term(Cell*, const std::string&, Direction); 

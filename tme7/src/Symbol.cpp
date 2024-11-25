@@ -69,41 +69,47 @@ namespace Netlist {
         int status ; 
         Symbol * symbol = new Symbol(c);
        // int type = xmlTextReaderNodeType(reader); 
-        const xmlChar* nodeName = xmlTextReaderConstLocalName( reader );
+        const xmlChar* nodeName;
 
-        do{
+        while((status = xmlTextReaderRead(reader)) == 1){
             nodeName = xmlTextReaderConstLocalName( reader );
-
+            cout << "[DEBUG::Symbol::fromXml] node name dans symbol : " << nodeName << endl;
             if(nodeName == boxTag && (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT)){
+                cout << "[DEBUG::Symbol::fromXml] i found a boxshape and im gonna creazte it " << endl;
                 if(!BoxShape::fromXml(symbol, reader)) 
                     cerr << "[ERROR] Symbol::fromXml(): error while parsing box node : " << nodeName << endl ;        
 
             }else if(nodeName == lineTag && (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT)){
+                cout << "[DEBUG::Symbol::fromXml] i found a lineshape and im gonna creazte it " << endl;
                 if(!LineShape::fromXml(symbol, reader)) 
                     cerr << "[ERROR] Symbol::fromXml(): error while parsing line node : " << nodeName << endl ; 
             }else if(nodeName == termTag && (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT)){
+                cout << "[DEBUG::Symbol::fromXml] i found a termshape and im gonna creazte it " << endl;
                 if(!TermShape::fromXml(symbol, reader)) 
                     cerr << "[ERROR] Symbol::fromXml(): error while parsing term node : " << nodeName << endl ; 
 
             }else if(nodeName == arcTag && (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT)){
+                cout << "[DEBUG::Symbol::fromXml] i found an arcshape and im gonna creazte it " << endl;
                 if(!ArcShape::fromXml(symbol, reader)) 
                     cerr << "[ERROR] Symbol::fromXml(): error while parsing arc node : " << nodeName << endl ; 
             }else if(nodeName == ellipseTag && (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT)){
+                cout << "[DEBUG::Symbol::fromXml] i found an ellipseshape and im gonna creazte it " << endl;
                 if(!EllipseShape::fromXml(symbol, reader)) 
                     cerr << "[ERROR] Symbol::fromXml(): error while parsing ellipse node : " << nodeName << endl ;
-            }else if(nodeName == symbolTag){
+            }else if(nodeName == symbolTag && (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT)){
                 //nothing to do ; either @ the beginning or the end 
-            }else{
-                cerr << "placeholder error 1" << endl ; 
+                cout << "[DEBUG::Symbol::fromXml] end of symbol?? " << endl;
+                break;
+            }else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT) {
+                cerr << "[ERROR?] Symbol::fromXml(): Unrecognized element <" << nodeName << "> in symbol tags." << endl;
             }
             
-        } while( !(status = xmlTextReaderRead(reader)) && 
-                 !(xmlTextReaderNodeType(reader) == XML_READER_TYPE_END_ELEMENT) && (nodeName == symbolTag) );
-      
-        if(status == -1){
+        }
+           
+        if (status == -1) {
             cerr << "[ERROR] Symbol::fromXml(): Unexpected termination of the XML parser." << endl;
-        }   
-
+        }
+        cout << "[DEBUG::Symbol::fromXml] IM GONNA RETURN FINALLY !1!1!1111!! " << endl;
         return symbol; 
 
     }

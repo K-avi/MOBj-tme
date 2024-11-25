@@ -107,7 +107,7 @@ namespace Netlist {
         }
 
         void Net::toXml(ostream& o){
-                o << indent++ << "<net name=\"" << name_ << "\" type=\"" << Term::toString(type_) << "\"/>" <<    endl;
+                o << indent++ << "<net name=\"" << name_ << "\" type=\"" << Term::typeToString(type_) << "\"/>" <<    endl;
 
                 for(auto & n : nodes_)
                         n->toXml(o);   
@@ -126,24 +126,32 @@ namespace Netlist {
                 const xmlChar* lineTag = xmlTextReaderConstString( readerptr, (const xmlChar*)"line");
 
                 int status ; 
-
+                
                 string netName = xmlCharToString( xmlTextReaderGetAttribute( readerptr, (const xmlChar*)"name" ) );
                 string netType = xmlCharToString( xmlTextReaderGetAttribute( readerptr, (const xmlChar*)"type" ) );
 
+                if(netName.empty()){
+                        cerr << "[ERROR] Net::fromXml(): net name is empty" << endl ; 
+                }
+                
+                if(netType.empty()){
+                        cerr << "[ERROR] Net::fromXml(): net type is empty" << endl ; 
+                }
 
-                Net * net = new Net(c, netName, Term::fromString(netType));
+                cout << "[DEBUG::Net::fromXml] Net name: " << netName << ", Net type: " << netType << endl;
+                Net * net = new Net(c, netName, Term::typeFromString(netType));
         // int type = xmlTextReaderNodeType(reader); 
                 const xmlChar* nodeName;
 
                 do{
                 nodeName = xmlTextReaderConstLocalName( readerptr );
-
+                cout << "[DEBUG::Net::fromXml] dans net le node name est : " << nodeName << endl;
                 if(nodeName == nodeTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
                         if(!Node::fromXml(net, readerptr)) 
-                        cerr << "[ERROR] Net::fromXml(): error while parsing node : " << nodeName << endl ;        
+                            cerr << "[ERROR] Net::fromXml(): error while parsing node : " << nodeName << endl ;        
                 }else if(nodeName == lineTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
                         if(!Line::fromXml(net, readerptr)) 
-                        cerr << "[ERROR] Net::fromXml(): error while parsing line node : " << nodeName << endl ; 
+                            cerr << "[ERROR] Net::fromXml(): error while parsing line node : " << nodeName << endl ; 
                 }else if(nodeName == netTag){
                         //nothing to do ; either @ the beginning or the end 
                 }else{

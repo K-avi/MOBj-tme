@@ -6,51 +6,51 @@
 
 namespace Netlist {
         
-        using namespace std;
+    using namespace std;
         
         
-        //methodes de classe
-        std::string Term::toString(Type t){
-                return (t == Internal) ? "Internal" : "External";
-        }
+    //methodes de classe
+    std::string Term::typeToString(Type t){
+        return (t == Internal) ? "Internal" : "External";
+    }
 
-        Term::Type Term::fromString(string s){
-                Term::Type t ;
-                if(s == "Internal") t = Internal ;
-                else if(s == "External" ) t = External ; 
-                else {cerr << "wrong value in Term::fromString arg is" << s <<endl; t = Internal ; }
-                return t;
-        }
+    Term::Type Term::typeFromString(string s){
+        Term::Type t ;
+        if(s == "Internal") t = Internal ;
+        else if(s == "External" ) t = External ; 
+        else {cerr << "[ERROR] Term::typeFromString wrong value in arg is" << s <<endl; t = Internal ; }
+        return t;
+    }
 
-        std::string Term::toString(Direction d){
-                switch (d) {
-                        case In : return "In";
-                        case Out : return "Out";
-                        case Inout : return "Inout";
-                        case Tristate : return "Tristate";
-                        case Transcv : return "Transcv";
-                        case Unknown : return "Unknown";
-                        default : return "Unknown";
+    std::string Term::directionToString(Direction d){
+        switch (d) {
+            case In : return "In";
+            case Out : return "Out";
+            case Inout : return "Inout";
+            case Tristate : return "Tristate";
+            case Transcv : return "Transcv";
+            case Unknown : return "Unknown";
+            default : return "Unknown";
+        }
+    }
+
+        Term::Direction Term::stringToDirection(std::string s){
+            if(s.empty()) return Unknown;
+
+            switch (s[0]) {
+                case 'I' : if( !s.compare("In")) return In ;
+                           else if(!s.compare("Inout")) return Inout;
+                           break;
+
+                case 'O' : if( !s.compare("Out")) return Out ; 
+                           break;
+
+                case 'T' : if(!s.compare("Tristate")) return Tristate; 
+                           else if(!s.compare("Transcv")) return Transcv;
+                           break;
+                default : return Unknown;
                 }
-        }
-
-        Term::Direction Term::toDirection(std::string s){
-                if(s.empty()) return Unknown;
-
-                switch (s[0]) {
-                        case 'I' : if( !s.compare("In")) return In ;
-                                             else if(!s.compare("Inout")) return Inout;
-                                             break;
-
-                        case 'O' : if( !s.compare("Out")) return Out ; 
-                                             break;
-
-                        case 'T' : if(!s.compare("Tristate")) return Tristate; 
-                                             else if(!s.compare("Transcv")) return Transcv;
-                                             break;
-                        default : return Unknown;
-                }
-                return Unknown;
+            return Unknown;
         }
 
         //constructeurs / destructeurs
@@ -62,7 +62,7 @@ namespace Netlist {
         net_(nullptr), //placeholder
         node_(this)
         {
-                c->add(this);
+            c->add(this);
         }
 
         Term::Term(Instance* i, const Term* modelTerm) //duplique le modèle
@@ -128,7 +128,7 @@ namespace Netlist {
 
         void Term::toXml(std::ostream& o){
                 o << indent << "<term name=\"" << name_ 
-                    << "\" direction=\"" << toString(direction_)
+                    << "\" direction=\"" << directionToString(direction_)
                     << "\" x=\"" << this->getPosition().getX()  
                     << "y=\"" << this->getPosition().getY() << "\" \"/>" << endl;
         }
@@ -136,14 +136,32 @@ namespace Netlist {
         Term* Term::fromXml(Cell* cell, xmlTextReaderPtr readerptr){
 
                 string name = xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"name"));
-                Direction d = toDirection(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"direction")));
+                string direction = xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"direction"));
                 
-                int x = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"x")));
-                int y = stoi(xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"y")));
+                int x, y;
+                bool init = true;
+                
+                init &= xmlGetIntAttribute( readerptr, "x", x);
+                init &= xmlGetIntAttribute( readerptr, "y", y);
 
-                Term* ret = new Term(cell, name,d);
-
-                ret->setPosition(Point(x,y));
+		        if(!init){
+		            cerr << "[ERROR] Term::fromXml(): Unknown coordinate : x : " << x << " y : "<< y 
+                    << " (line:" << xmlTextReaderGetParserLineNumber(readerptr) << ")." << endl;
+		        }
+		        
+		        if(name.empty()){
+		            cerr << "[ERROR] Term::fromXml(): name empty" << " (line:" << xmlTextReaderGetParserLineNumber(readerptr) << ")." << endl;
+		        }
+		        
+		        if(direction.empty()){
+		            cerr << "[ERROR] Term::fromXml(): direction empty" 
+		            << " (line:" << xmlTextReaderGetParserLineNumber(readerptr) << ").";
+		        }
+		       
+                Term * ret = new Term(cell, name, stringToDirection(direction));
+                ret->setPosition(x,y);
+		        
+                cout << "[DEBUG::Term::fromXml] term was created with name : " << name << " direction : " << direction << " and x, y : " << x << "," << y <<endl;
                 return ret;
-        }// a faire : traitement d'erreur 
+        }
 };

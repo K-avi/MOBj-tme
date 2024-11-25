@@ -20,7 +20,7 @@ int main ( int argc, char* argv[] )
   Cell::load( "gnd" );
   Cell::load( "TransistorN" );
   Cell::load( "TransistorP" );
-  Cell::load( "and2" );
+  /*Cell::load( "and2" );
   Cell::load( "or2" );
   Cell* xor2      = Cell::load( "xor2" );
   Cell* halfadder = Cell::load( "halfadder" );
@@ -29,7 +29,7 @@ int main ( int argc, char* argv[] )
   xor2->toXml( cout );
 
   cout << "\nContenu du <halfadder>:" << endl;
-  halfadder->toXml( cout );
+  halfadder->toXml( cout );*/
 
   return 0;
 }
