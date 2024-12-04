@@ -208,7 +208,6 @@ namespace Netlist{
                 cerr << "[ERROR] TermShape::fromXml(): Unknown align" << endl;
                 return NULL;
             }
-            cout << "created termshape in symbol with name : " << termName << " x1, y1 : " << x1 << "," << y1 << " and align : " << termAlignStr << endl;
             return new TermShape(owner, termName, x1, y1, TermShape::strToNameAlign(termAlignStr));     
         } 
         return NULL;

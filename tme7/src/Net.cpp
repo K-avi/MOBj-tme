@@ -59,18 +59,16 @@ namespace Netlist {
                         }
                 }
                 return nodes_.size();
-        }//
+        }
         
         Node * Net::getNode(size_t i) const {
                 if(i < 0) return  nullptr;
-                cout << "i=" << i << " nodes.size()= " << nodes_.size() << endl ;
                 for(Node* n : nodes_ ){
                         if(n->getId() == i){
                                 return n ;
                         }
                 }
                 return nullptr;
-        	
         }
 
         //modificateurs Node
@@ -97,7 +95,6 @@ namespace Netlist {
         //modificateurs Line
 
         void Net::add (Line* line){
-                cout << lines_.size() << endl ;
                 if(line)
                         lines_.push_back(line);
         }
@@ -147,24 +144,19 @@ namespace Netlist {
                         cerr << "[ERROR] Net::fromXml(): net type is empty" << endl ; 
                 }
 
-                cout << "[DEBUG::Net::fromXml] Net name: " << netName << ", Net type: " << netType << endl;
                 Net * net = new Net(c, netName, Term::typeFromString(netType));
         // int type = xmlTextReaderNodeType(reader); 
                 const xmlChar* nodeName;
 
                 while ((status = xmlTextReaderRead(readerptr)) == 1) {
                     nodeName = xmlTextReaderConstLocalName( readerptr );
-                    cout << "[DEBUG::Net::fromXml] dans net le node name est : " << nodeName << endl;
                     if(nodeName == nodeTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
-                        cout << "[DEBUG::Net::fromXml] found a node and creating it" << endl;
                         if(!Node::fromXml(net, readerptr)) 
                             cerr << "[ERROR] Net::fromXml(): error while parsing node : " << nodeName << endl ;        
                     }else if(nodeName == lineTag && (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT)){
-                        cout << "[DEBUG::Net::fromXml] found a line and creating it" << endl;
                         if(!Line::fromXml(net, readerptr)) 
                             cerr << "[ERROR] Net::fromXml(): error while parsing line node : " << nodeName << endl ; 
                     }else if(nodeName == netTag && xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_END_ELEMENT){
-                        cout << "[DEBUG::Net::fromXml] end of net ??" << endl;
                         break;
                     }else if (xmlTextReaderNodeType(readerptr) == XML_READER_TYPE_ELEMENT) {
                         cerr << "[ERROR??] Unrecognized element <" << nodeName << "> in net tags." << endl;

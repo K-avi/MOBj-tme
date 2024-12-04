@@ -46,8 +46,8 @@ namespace Netlist {
       xmlGetIntAttribute( reader, "source", idSource );
       xmlGetIntAttribute( reader, "target", idTarget );
 
-      Node*      source = net->getNode( idSource );
-      Node*      target = net->getNode( idTarget );
+      Node* source = net->getNode( idSource );
+      Node* target = net->getNode( idTarget );
 
       if (not source) {
         cerr << "[ERROR] Line::fromXml(): Unknown source node id:" << idSource << " (line:"
@@ -59,7 +59,6 @@ namespace Netlist {
              << xmlTextReaderGetParserLineNumber(reader) << ")." << endl;
         return false;
       }
-      cout << "[DEBUG::Line::fromXml] created line w source : " << idSource << " and target : " << idTarget << endl;
       net->add( new Line(source,target) );
       return true;
     }

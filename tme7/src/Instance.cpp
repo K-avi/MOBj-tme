@@ -130,8 +130,6 @@ namespace Netlist {
                 
                 Instance* ret =  new Instance(cell, mastercell, name);
                 ret->setPosition(Point(x,y));
-                cout << "[DEBUG::Instance::fromXml] created instance with name : " << name << ", masterCellName : " << masterCellName 
-                << ", x : " << x << ", y : "<< y << endl; 
                 return ret; 
                 
         } // a faire : traitement d'erreur 
