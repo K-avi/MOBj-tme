@@ -1,4 +1,5 @@
 #include "Symbol.hpp"
+#include "Indentation.hpp"
 #include "Term.hpp"
 #include "Shape.hpp"
 #include <ostream>
@@ -47,14 +48,14 @@ namespace Netlist {
     }
 
     void Symbol::toXml(std::ostream& o) const{
-
         o << indent++ << "<symbol>" << endl;
-
-        for (auto & s : shapes_)
+        for (auto & s : shapes_){
+            o << ++indent;
             s->toXml(o);
+            o << --indent << endl ;
+        }
 
         o << --indent << "</symbol>" << endl;
-
     }
 
     Symbol* Symbol::fromXml(Cell* c, xmlTextReaderPtr reader){
@@ -67,7 +68,7 @@ namespace Netlist {
         const xmlChar* symbolTag = xmlTextReaderConstString( reader, (const xmlChar*)"symbol" );
 
         int status ; 
-        Symbol * symbol = new Symbol(c);
+        Symbol * symbol = c->getSymbol();
         cout << "[DEBUG::Symbol::fromXml] created symbol " << endl;
        // int type = xmlTextReaderNodeType(reader); 
         const xmlChar* nodeName;
@@ -75,6 +76,7 @@ namespace Netlist {
         while((status = xmlTextReaderRead(reader)) == 1){
             nodeName = xmlTextReaderConstLocalName( reader );
             cout << "[DEBUG::Symbol::fromXml] node name dans symbol : " << nodeName << endl;
+            //Shape::fromXml(symbol, reader);
             if(nodeName == boxTag && (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT)){
                 cout << "[DEBUG::Symbol::fromXml] i found a boxshape and im gonna creazte it " << endl;
                 if(!BoxShape::fromXml(symbol, reader)) 
@@ -104,7 +106,6 @@ namespace Netlist {
             }else if (xmlTextReaderNodeType(reader) == XML_READER_TYPE_ELEMENT) {
                 cerr << "[ERROR?] Symbol::fromXml(): Unrecognized element <" << nodeName << "> in symbol tags." << endl;
             }
-            
         }
            
         if (status == -1) {

@@ -37,7 +37,7 @@ namespace Netlist {
                 unsigned int                            getId                 () const;
                 Term::Type                                getType             () const;
                 const std::vector<Node*>& getNodes            () const;
-                Node * getNode(int) const;
+                Node * getNode(size_t) const;
                 size_t  getFreeNodeId () const;
 
                 //Ajout méthodes pour Line

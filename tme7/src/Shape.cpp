@@ -136,7 +136,7 @@ namespace Netlist{
     
     //TermShape Methods
     TermShape::TermShape(Symbol * s, string name, int x1, int y1, NameAlign align): Shape(s), x1_(x1), y1_(y1), align_(align){
-        s->add(this);
+       // s->add(this);
         Cell * cell = owner_->getCell();
         term_ = cell->getTerm(name);
     }
@@ -175,10 +175,8 @@ namespace Netlist{
     int TermShape::getY1() const{return y1_;}
     
     void TermShape::toXml(ostream& o) {
-
-        o << "<term name=\"" << term_->getName() << "\" x1=\"" << x1_ <<"\" y1=\""<< y1_ << "align=\"" <<
+        o << "<term name=\"" << term_->getName() << "\" x1=\"" << x1_ <<"\" y1=\""<< y1_ << " align=\"" <<
         NameAlignToStr(align_) <<"\"/>";
-
     }
 
     TermShape * TermShape::fromXml(Symbol * owner, xmlTextReaderPtr reader){
@@ -218,15 +216,13 @@ namespace Netlist{
     
     //EllipseShape Methods
     EllipseShape::EllipseShape(Symbol * s, const Box & b) : Shape(s), box_(b){}
-    
     EllipseShape::~EllipseShape(){}
-    
     Box EllipseShape::getBoundingBox() const {return box_;}
 
     void EllipseShape::toXml(ostream& o) {
 
         o << "<ellipse x1=\"" << box_.getX1() <<"\" y1=\""<< box_.getY1() <<"\" x2=\"" 
-        << box_.getX2()  << "\" y2=\"" << box_.getY2() <<"\" />";
+        << box_.getX2()  << "\" y2=\"" << box_.getY2() <<"\" />"  ;
 
     }
     

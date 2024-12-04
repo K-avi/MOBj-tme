@@ -1,0 +1,1217 @@
+Chargement des modeles...
+[DEBUG::Term::fromXml] term was created with name : vdd direction : Out and x, y : 0,0
+[DEBUG::Symbol::fromXml] created symbol 
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : vdd x1, y1 : 20,0 and align : bottom_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : symbol
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : cell
+[DEBUG::Symbol::fromXml] IM GONNA RETURN FINALLY !1!1!1111!! 
+[DEBUG::Term::fromXml] term was created with name : vss direction : Out and x, y : 0,0
+[DEBUG::Symbol::fromXml] created symbol 
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : vss x1, y1 : 20,20 and align : top_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : symbol
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : cell
+[DEBUG::Symbol::fromXml] IM GONNA RETURN FINALLY !1!1!1111!! 
+[DEBUG::Term::fromXml] term was created with name : S direction : In and x, y : 0,0
+[DEBUG::Term::fromXml] term was created with name : D direction : Out and x, y : 0,0
+[DEBUG::Term::fromXml] term was created with name : G direction : In and x, y : 0,0
+[DEBUG::Symbol::fromXml] created symbol 
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : S x1, y1 : 40,0 and align : bottom_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : D x1, y1 : 40,80 and align : top_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : G x1, y1 : 0,40 and align : top_left
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : #comment
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : #comment
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : symbol
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : cell
+[DEBUG::Symbol::fromXml] IM GONNA RETURN FINALLY !1!1!1111!! 
+[DEBUG::Term::fromXml] term was created with name : S direction : In and x, y : 0,0
+[DEBUG::Term::fromXml] term was created with name : D direction : Out and x, y : 0,0
+[DEBUG::Term::fromXml] term was created with name : G direction : In and x, y : 0,0
+[DEBUG::Symbol::fromXml] created symbol 
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : S x1, y1 : 40,80 and align : top_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : D x1, y1 : 40,0 and align : bottom_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : G x1, y1 : 0,40 and align : top_left
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : #comment
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : #comment
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : ellipse
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : symbol
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : cell
+[DEBUG::Symbol::fromXml] IM GONNA RETURN FINALLY !1!1!1111!! 
+[DEBUG::Term::fromXml] term was created with name : i0 direction : In and x, y : 0,140
+[DEBUG::Term::fromXml] term was created with name : i1 direction : In and x, y : 0,320
+[DEBUG::Term::fromXml] term was created with name : q direction : Out and x, y : 400,200
+[DEBUG::Instance::fromXml] created instance with name : VDD, masterCellName : vdd, x : 240, y : 400
+[DEBUG::Instance::fromXml] created instance with name : VSS, masterCellName : gnd, x : 240, y : -20
+[DEBUG::Instance::fromXml] created instance with name : T1, masterCellName : TransistorN, x : 160, y : 20
+[DEBUG::Instance::fromXml] created instance with name : T2, masterCellName : TransistorN, x : 160, y : 100
+[DEBUG::Instance::fromXml] created instance with name : T3, masterCellName : TransistorP, x : 120, y : 280
+[DEBUG::Instance::fromXml] created instance with name : T4, masterCellName : TransistorP, x : 200, y : 220
+[DEBUG::Instance::fromXml] created instance with name : T5, masterCellName : TransistorN, x : 320, y : 40
+[DEBUG::Instance::fromXml] created instance with name : T6, masterCellName : TransistorP, x : 320, y : 260
+[DEBUG::Net::fromXml] Net name: vss, Net type: Internal
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=1 nodes.size()= 5
+i=3 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 1 and target : 3
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 5
+i=0 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 3 and target : 0
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 5
+i=4 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 0 and target : 4
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 5
+i=2 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 4 and target : 2
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: vdd, Net type: Internal
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=1 nodes.size()= 8
+i=4 nodes.size()= 8
+[DEBUG::Line::fromXml] created line w source : 1 and target : 4
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 8
+i=5 nodes.size()= 8
+[DEBUG::Line::fromXml] created line w source : 4 and target : 5
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=2 nodes.size()= 8
+i=5 nodes.size()= 8
+[DEBUG::Line::fromXml] created line w source : 2 and target : 5
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=5 nodes.size()= 8
+i=6 nodes.size()= 8
+[DEBUG::Line::fromXml] created line w source : 5 and target : 6
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 8
+i=7 nodes.size()= 8
+[DEBUG::Line::fromXml] created line w source : 3 and target : 7
+4
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=7 nodes.size()= 8
+i=6 nodes.size()= 8
+[DEBUG::Line::fromXml] created line w source : 7 and target : 6
+5
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=6 nodes.size()= 8
+i=0 nodes.size()= 8
+[DEBUG::Line::fromXml] created line w source : 6 and target : 0
+6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: nq, Net type: Internal
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 11
+i=4 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 0 and target : 4
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 11
+i=5 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 4 and target : 5
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=1 nodes.size()= 11
+i=6 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 1 and target : 6
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=5 nodes.size()= 11
+i=6 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 5 and target : 6
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=6 nodes.size()= 11
+i=7 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 6 and target : 7
+4
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=7 nodes.size()= 11
+i=10 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 7 and target : 10
+5
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=10 nodes.size()= 11
+i=2 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 10 and target : 2
+6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=7 nodes.size()= 11
+i=9 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 7 and target : 9
+7
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=9 nodes.size()= 11
+i=3 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 9 and target : 3
+8
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=8 nodes.size()= 11
+i=5 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 8 and target : 5
+9
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: q, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=1 nodes.size()= 4
+i=3 nodes.size()= 4
+[DEBUG::Line::fromXml] created line w source : 1 and target : 3
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=2 nodes.size()= 4
+i=3 nodes.size()= 4
+[DEBUG::Line::fromXml] created line w source : 2 and target : 3
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 4
+i=0 nodes.size()= 4
+[DEBUG::Line::fromXml] created line w source : 3 and target : 0
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: i0, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 5
+i=3 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 0 and target : 3
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 5
+i=1 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 3 and target : 1
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 5
+i=4 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 3 and target : 4
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 5
+i=2 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 4 and target : 2
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: i1, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 5
+i=4 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 0 and target : 4
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 5
+i=1 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 3 and target : 1
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 5
+i=4 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 3 and target : 4
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 5
+i=2 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 4 and target : 2
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: n1, Net type: Internal
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 2
+i=1 nodes.size()= 2
+[DEBUG::Line::fromXml] created line w source : 0 and target : 1
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Symbol::fromXml] created symbol 
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : arc
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : i0 x1, y1 : -20,10 and align : top_left
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : i1 x1, y1 : -20,50 and align : top_left
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : q x1, y1 : 60,30 and align : top_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : symbol
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : cell
+[DEBUG::Symbol::fromXml] IM GONNA RETURN FINALLY !1!1!1111!! 
+[DEBUG::Term::fromXml] term was created with name : i0 direction : In and x, y : 0,180
+[DEBUG::Term::fromXml] term was created with name : i1 direction : In and x, y : 0,420
+[DEBUG::Term::fromXml] term was created with name : q direction : Out and x, y : 400,260
+[DEBUG::Instance::fromXml] created instance with name : VDD, masterCellName : vdd, x : 240, y : 520
+[DEBUG::Instance::fromXml] created instance with name : VSS, masterCellName : gnd, x : 240, y : 20
+[DEBUG::Instance::fromXml] created instance with name : T1, masterCellName : TransistorN, x : 200, y : 60
+[DEBUG::Instance::fromXml] created instance with name : T2, masterCellName : TransistorN, x : 120, y : 140
+[DEBUG::Instance::fromXml] created instance with name : T3, masterCellName : TransistorP, x : 160, y : 300
+[DEBUG::Instance::fromXml] created instance with name : T4, masterCellName : TransistorP, x : 160, y : 380
+[DEBUG::Instance::fromXml] created instance with name : T5, masterCellName : TransistorN, x : 320, y : 140
+[DEBUG::Instance::fromXml] created instance with name : T6, masterCellName : TransistorP, x : 320, y : 300
+[DEBUG::Net::fromXml] Net name: vss, Net type: Internal
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=2 nodes.size()= 7
+i=4 nodes.size()= 7
+[DEBUG::Line::fromXml] created line w source : 2 and target : 4
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 7
+i=5 nodes.size()= 7
+[DEBUG::Line::fromXml] created line w source : 4 and target : 5
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=1 nodes.size()= 7
+i=5 nodes.size()= 7
+[DEBUG::Line::fromXml] created line w source : 1 and target : 5
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=5 nodes.size()= 7
+i=0 nodes.size()= 7
+[DEBUG::Line::fromXml] created line w source : 5 and target : 0
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 7
+i=6 nodes.size()= 7
+[DEBUG::Line::fromXml] created line w source : 3 and target : 6
+4
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=6 nodes.size()= 7
+i=0 nodes.size()= 7
+[DEBUG::Line::fromXml] created line w source : 6 and target : 0
+5
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: vdd, Net type: Internal
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=1 nodes.size()= 6
+i=4 nodes.size()= 6
+[DEBUG::Line::fromXml] created line w source : 1 and target : 4
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 6
+i=5 nodes.size()= 6
+[DEBUG::Line::fromXml] created line w source : 4 and target : 5
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=5 nodes.size()= 6
+i=0 nodes.size()= 6
+[DEBUG::Line::fromXml] created line w source : 5 and target : 0
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=2 nodes.size()= 6
+i=6 nodes.size()= 6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=6 nodes.size()= 6
+i=5 nodes.size()= 6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: nq, Net type: Internal
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=1 nodes.size()= 11
+i=5 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 1 and target : 5
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=5 nodes.size()= 11
+i=6 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 5 and target : 6
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=2 nodes.size()= 11
+i=6 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 2 and target : 6
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=6 nodes.size()= 11
+i=7 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 6 and target : 7
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 11
+i=7 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 0 and target : 7
+4
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=7 nodes.size()= 11
+i=8 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 7 and target : 8
+5
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=8 nodes.size()= 11
+i=9 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 8 and target : 9
+6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=9 nodes.size()= 11
+i=3 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 9 and target : 3
+7
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=8 nodes.size()= 11
+i=10 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 8 and target : 10
+8
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=10 nodes.size()= 11
+i=4 nodes.size()= 11
+[DEBUG::Line::fromXml] created line w source : 10 and target : 4
+9
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: n1, Net type: Internal
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 2
+i=1 nodes.size()= 2
+[DEBUG::Line::fromXml] created line w source : 0 and target : 1
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: q, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=1 nodes.size()= 4
+i=3 nodes.size()= 4
+[DEBUG::Line::fromXml] created line w source : 1 and target : 3
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=2 nodes.size()= 4
+i=3 nodes.size()= 4
+[DEBUG::Line::fromXml] created line w source : 2 and target : 3
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 4
+i=0 nodes.size()= 4
+[DEBUG::Line::fromXml] created line w source : 3 and target : 0
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: i0, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 5
+i=3 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 0 and target : 3
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 5
+i=1 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 3 and target : 1
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 5
+i=4 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 3 and target : 4
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 5
+i=2 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 4 and target : 2
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: i1, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 5
+i=4 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 0 and target : 4
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 5
+i=1 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 3 and target : 1
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 5
+i=4 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 3 and target : 4
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 5
+i=2 nodes.size()= 5
+[DEBUG::Line::fromXml] created line w source : 4 and target : 2
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Symbol::fromXml] created symbol 
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : arc
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : arc
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : arc
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : i0 x1, y1 : -20,10 and align : top_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : i1 x1, y1 : -20,50 and align : top_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : q x1, y1 : 90,30 and align : top_left
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : symbol
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : cell
+[DEBUG::Symbol::fromXml] IM GONNA RETURN FINALLY !1!1!1111!! 
+[DEBUG::Term::fromXml] term was created with name : i0 direction : In and x, y : 0,0
+[DEBUG::Term::fromXml] term was created with name : i1 direction : In and x, y : 0,0
+[DEBUG::Term::fromXml] term was created with name : q direction : Out and x, y : 0,0
+[DEBUG::Symbol::fromXml] created symbol 
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : #comment
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : arc
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : arc
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : arc
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : arc
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : i0 x1, y1 : -20,10 and align : top_left
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : i1 x1, y1 : -20,50 and align : top_left
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : q x1, y1 : 90,30 and align : top_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : symbol
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : cell
+[DEBUG::Symbol::fromXml] IM GONNA RETURN FINALLY !1!1!1111!! 
+[DEBUG::Term::fromXml] term was created with name : a direction : In and x, y : 0,120
+[DEBUG::Term::fromXml] term was created with name : b direction : In and x, y : 0,200
+[DEBUG::Term::fromXml] term was created with name : sout direction : Out and x, y : 300,80
+[DEBUG::Term::fromXml] term was created with name : cout direction : Out and x, y : 300,230
+[DEBUG::Instance::fromXml] created instance with name : xor2_1, masterCellName : xor2, x : 150, y : 200
+[DEBUG::Instance::fromXml] created instance with name : and2_1, masterCellName : and2, x : 150, y : 50
+[DEBUG::Net::fromXml] Net name: a, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=0 nodes.size()= 6
+i=3 nodes.size()= 6
+[DEBUG::Line::fromXml] created line w source : 0 and target : 3
+0
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 6
+i=4 nodes.size()= 6
+[DEBUG::Line::fromXml] created line w source : 3 and target : 4
+1
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=4 nodes.size()= 6
+i=2 nodes.size()= 6
+[DEBUG::Line::fromXml] created line w source : 4 and target : 2
+2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=3 nodes.size()= 6
+i=5 nodes.size()= 6
+[DEBUG::Line::fromXml] created line w source : 3 and target : 5
+3
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=5 nodes.size()= 6
+i=1 nodes.size()= 6
+[DEBUG::Line::fromXml] created line w source : 5 and target : 1
+4
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: b, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=10 nodes.size()= 6
+i=13 nodes.size()= 6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=13 nodes.size()= 6
+i=14 nodes.size()= 6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=14 nodes.size()= 6
+i=12 nodes.size()= 6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=13 nodes.size()= 6
+i=15 nodes.size()= 6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=15 nodes.size()= 6
+i=11 nodes.size()= 6
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: sout, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=6 nodes.size()= 2
+i=7 nodes.size()= 2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Net::fromXml] Net name: cout, Net type: External
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : node
+[DEBUG::Net::fromXml] found a node and creating it
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : line
+[DEBUG::Net::fromXml] found a line and creating it
+i=8 nodes.size()= 2
+i=9 nodes.size()= 2
+[DEBUG::Net::fromXml] dans net le node name est : #text
+[DEBUG::Net::fromXml] dans net le node name est : net
+[DEBUG::Net::fromXml] end of net ??
+[DEBUG::Symbol::fromXml] created symbol 
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : box
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : line
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : a x1, y1 : 0,60 and align : top_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : b x1, y1 : 0,20 and align : top_right
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : cout x1, y1 : 120,20 and align : top_left
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : term
+created termshape in symbol with name : sout x1, y1 : 120,60 and align : top_left
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : symbol
+[DEBUG::Symbol::fromXml] node name dans symbol : #text
+[DEBUG::Symbol::fromXml] node name dans symbol : cell
+[DEBUG::Symbol::fromXml] IM GONNA RETURN FINALLY !1!1!1111!! 
+
+Contenu du <xor2>:
+<?xml version="1.0"?>
+<cell name="xor2">
+  <terms>
+    <term name="i0" direction="In" x="0y="0" "/>
+    <term name="i1" direction="In" x="0y="0" "/>
+    <term name="q" direction="Out" x="0y="0" "/>
+  </terms>
+  <instances>
+  </instances>
+  <nets>
+  </nets>
+  <symbol>
+  </symbol>
+</cell>
+
+Contenu du <halfadder>:
+<?xml version="1.0"?>
+<cell name="halfadder">
+  <terms>
+    <term name="a" direction="In" x="0y="120" "/>
+    <term name="b" direction="In" x="0y="200" "/>
+    <term name="sout" direction="Out" x="300y="80" "/>
+    <term name="cout" direction="Out" x="300y="230" "/>
+  </terms>
+  <instances>
+    <instance name="xor2_1" mastercell="xor2" x="150" y="200"/>
+    <instance name="and2_1" mastercell="and2" x="150" y="50"/>
+  </instances>
+  <nets>
+    <net name="a" type="External"/>
+      <node term="a" id="0" x="0" y="120"/>
+      <node term="i0" instance="xor2_1" id="1" x="0" y="0"/>
+      <node term="i0" instance="and2_1" id="2" x="0" y="0"/>
+      <node x="100" y="120" id="3"/>
+      <node x="100" y="60" id="4"/>
+      <node x="100" y="210" id="5"/>
+      <Line source="0" target="3"/>
+      <Line source="3" target="4"/>
+      <Line source="4" target="2"/>
+      <Line source="3" target="5"/>
+      <Line source="5" target="1"/>
+    </net>
+    <net name="b" type="External"/>
+      <node term="b" id="0" x="0" y="200"/>
+      <node term="i1" instance="xor2_1" id="1" x="0" y="0"/>
+      <node term="i1" instance="and2_1" id="2" x="0" y="0"/>
+      <node x="80" y="200" id="3"/>
+      <node x="80" y="100" id="4"/>
+      <node x="80" y="250" id="5"/>
+    </net>
+    <net name="sout" type="External"/>
+      <node term="sout" id="0" x="300" y="80"/>
+      <node term="q" instance="and2_1" id="1" x="0" y="0"/>
+    </net>
+    <net name="cout" type="External"/>
+      <node term="cout" id="0" x="300" y="230"/>
+      <node term="q" instance="xor2_1" id="1" x="0" y="0"/>
+    </net>
+  </nets>
+  <symbol>
+  </symbol>
+</cell>

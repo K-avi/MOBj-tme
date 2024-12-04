@@ -61,8 +61,16 @@ namespace Netlist {
                 return nodes_.size();
         }//
         
-        Node * Net::getNode(int i) const {
-        	return nodes_[i];
+        Node * Net::getNode(size_t i) const {
+                if(i < 0) return  nullptr;
+                cout << "i=" << i << " nodes.size()= " << nodes_.size() << endl ;
+                for(Node* n : nodes_ ){
+                        if(n->getId() == i){
+                                return n ;
+                        }
+                }
+                return nullptr;
+        	
         }
 
         //modificateurs Node
@@ -89,6 +97,7 @@ namespace Netlist {
         //modificateurs Line
 
         void Net::add (Line* line){
+                cout << lines_.size() << endl ;
                 if(line)
                         lines_.push_back(line);
         }
