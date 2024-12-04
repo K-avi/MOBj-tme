@@ -1,8 +1,10 @@
 #include "Instance.hpp"
 #include "Node.hpp"
 #include "Point.hpp"
+#include "Symbol.hpp"
 #include "Term.hpp"
 #include "Net.hpp"
+#include "Shape.hpp"
 #include <cstddef>
 #include <ostream>
 #include <string>
@@ -95,6 +97,13 @@ namespace Netlist {
 
         void    Instance::setPosition     ( const Point& p){
                 position_ = Point(p.getX(),p.getY());
+                for(Term* t : terms_ ){
+                        TermShape* ts = owner_->getSymbol()->getTermShape(t);//recupere termshape 
+                        Point p(ts->getX1(), ts->getY1()); //met sa position dans un point
+                        p.translate(position_);  //la translate de la position de l'instance
+                        t->setPosition(p.getX(),p.getY()); //affecte au terminal la position translatée
+                }//pas sur tbh 
+                
         }
         void    Instance::setPosition     ( int x, int y ){
                 position_ = Point(x,y);

@@ -14,14 +14,12 @@ namespace Netlist {
 
     Cell * Symbol::getCell() const {return owner_;}
 
-    //TODO : j'ai zero idée de ce que doit return cette fonction
     //Box Symbol::getBoundingBox() const {}
 
     Point Symbol::getTermPosition(Term * t) const{
         return t->getPosition();
     }
 
-    //TODO : j'ai zero idée de ce que doit return cette fonction
     TermShape* Symbol::getTermShape(Term * t) const {
         
         for( Shape* s : shapes_){
