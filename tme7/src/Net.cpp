@@ -79,7 +79,7 @@ namespace Netlist {
                 }else{
                         nodes_.push_back(n); 
                 }
-                n->setId(idx);
+                //n->setId(idx);
         }
 
         bool    Net::remove ( Node* n ){
