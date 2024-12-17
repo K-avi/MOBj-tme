@@ -37,17 +37,16 @@ namespace Netlist {
 
 
 
-  CellWidget::CellWidget ( QWidget* parent )
-    : QWidget(parent)
-    , cell_  (NULL)
-  {
-    setAttribute    ( Qt::WA_OpaquePaintEvent );
-    setAttribute    ( Qt::WA_NoSystemBackground );
-    setAttribute    ( Qt::WA_StaticContents );
-    setSizePolicy   ( QSizePolicy::Expanding, QSizePolicy::Expanding );
-    setFocusPolicy  ( Qt::StrongFocus );
-    setMouseTracking( true );
-  }
+  CellWidget::CellWidget(QWidget *parent)
+    : QWidget(parent), cell_(NULL), viewport_(Box(0, 0, 500, 500)) {
+
+        setAttribute(Qt::WA_OpaquePaintEvent);
+        setAttribute(Qt::WA_NoSystemBackground);
+        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); // X and Y direction.
+        setFocusPolicy(Qt::StrongFocus);
+        setMouseTracking(true);
+    }
+
 
 
   CellWidget::~CellWidget ()
@@ -60,13 +59,20 @@ namespace Netlist {
     repaint();
   }
 
+  
+  QSize CellWidget::minimumSizeHint() const {
+    return QSize(500, 500);
+  }
 
-  QSize  CellWidget::minimumSizeHint () const
-  { return QSize(500,500); }
+  void CellWidget::resizeEvent(QResizeEvent *event) {
+      const QSize &size = event->size();
 
+      // Assume the resize is always done by drawing the bottom right corner.
+      viewport_.setX2(viewport_.getX1() + size.width());
+      viewport_.setY1(viewport_.getY2() - size.height());
 
-  void  CellWidget::resizeEvent ( QResizeEvent* event )
-  { repaint(); }
+      std::cerr << "CellWidget::resizeEvent() viewport_: " << viewport_ << std::endl;
+  }
 
 
   void  CellWidget::paintEvent ( QPaintEvent* event )
@@ -92,6 +98,67 @@ namespace Netlist {
     painter.drawRect( nameRect );
     painter.drawText( nameRect, Qt::AlignCenter, cellName );
   }
+  
+  void CellWidget::keyPressEvent(QKeyEvent* event) {
+    event->ignore();
+
+    if (event->modifiers() & (Qt::ControlModifier | Qt::ShiftModifier)) {
+        return;
+    }
+
+    switch (event->key()) {
+        case Qt::Key_Up:
+            goUp();
+            break;
+        case Qt::Key_Down:
+            goDown();
+            break;
+        case Qt::Key_Left:
+            goLeft();
+            break;
+        case Qt::Key_Right:
+            goRight();
+            break;
+        default:
+            return;
+    }
+
+    event->accept();
+  }
+
+  void CellWidget::goRight() {
+      viewport_.translate(Point(20, 0));
+      repaint();
+  }
+
+  void CellWidget::goUp() {
+      viewport_.translate(Point(0, 20));
+      repaint();
+  }
+  
+  void CellWidget::query(unsigned int flags, QPainter& painter) {
+    if (!cell_ || !flags) return;
+
+    const vector<Instance*>& instances = cell_->getInstances();
+    for (size_t i = 0; i < instances.size(); ++i) {
+        Point instPos = instances[i]->getPosition();
+        const Symbol* symbol = instances[i]->getMasterCell()->getSymbol();
+        if (!symbol) continue;
+
+        if (flags & InstanceShapes) {
+            const vector<Shape*>& shapes = symbol->getShapes();
+            for (size_t j = 0; j < shapes.size(); ++j) {
+                BoxShape* boxShape = dynamic_cast<BoxShape*>(shapes[j]);
+                if (boxShape) {
+                    Box box = boxShape->getBoundingBox();
+                    QRect rect = boxToScreenRect(box.translate(instPos));
+                    painter.drawRect(rect);
+                }
+            }
+        }
+    }
+}
+
 
 
 }  // Netlist namespace.

@@ -19,19 +19,31 @@ namespace Netlist {
 
 
   class CellWidget : public QWidget {
-      Q_OBJECT;
+    Q_OBJECT
+
     public:
-                      CellWidget         ( QWidget* parent=NULL );
-      virtual        ~CellWidget         ();
-              void    setCell            ( Cell* );
-      inline  Cell*   getCell            () const;
-      virtual QSize   minimumSizeHint    () const;
-      virtual void    resizeEvent        ( QResizeEvent* );
+        CellWidget(QWidget *parent = NULL);
+        virtual ~CellWidget();
+        
+        void setCell(Cell *);
+        inline Cell *getCell() const;
+        inline QRect boxToScreenRect(const Box &) const;
+        inline QPoint pointToScreenPoint(const Point &) const;
+        inline Box screenRectToBox(const QRect &) const;
+        inline Point screenPointToPoint(const QPoint &) const;
+        
+        virtual QSize minimumSizeHint() const;
+        virtual void resizeEvent(QResizeEvent *);
+
     protected:
-      virtual void    paintEvent         ( QPaintEvent* );
+        virtual void paintEvent(QPaintEvent *);
+        virtual void keyPressEvent(QKeyEvent *);
+
     private:
-      Cell* cell_;
-  };
+        Cell *cell_;
+        Box viewport_;
+    };
+
 
 
   inline Cell* CellWidget::getCell () const { return cell_; }
