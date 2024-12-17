@@ -1,0 +1,5 @@
+-I/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src
+-I/usr/include/libxml2
+-o
+/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/moc_SaveCellDialog.cpp
+/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/SaveCellDialog.hpp
