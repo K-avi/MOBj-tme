@@ -3,7 +3,12 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <qdialog.h>
 #include "OpenCellDialog.hpp"
+
+using namespace Netlist ;
+
+namespace Netlist{
 
 OpenCellDialog::OpenCellDialog(QWidget *parent)
     : QDialog(parent), lineEdit_(NULL)
@@ -53,8 +58,15 @@ const QString OpenCellDialog::getCellName() const
 
 bool OpenCellDialog::run(QString &name)
 {
-    int dialogResult = exec();
-    name = getCellName();
+    OpenCellDialog* cell = new OpenCellDialog(NULL);
+
+    int dialogResult = cell->exec();
+    name = cell->getCellName();
+
+    delete cell ; 
     return (dialogResult == Accepted);
 }
 
+
+
+}

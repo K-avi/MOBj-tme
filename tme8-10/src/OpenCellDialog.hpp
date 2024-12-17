@@ -1,20 +1,26 @@
 #include <QDialog>
+#include <QLineEdit>
+
+
+namespace Netlist{
 
 class OpenCellDialog : public QDialog {
 
-    Q_OBJECT ; 
+    Q_OBJECT 
     
     public :
 
     OpenCellDialog( QWidget* parent=NULL); 
     static bool run (QString& name); 
 
-    const QString getCellName() const ; 
+    const QString getCellName() const; 
     void setCellName(const QString&); 
 
     protected: 
 
-    QlineEdit* lineEdit_; 
+    QLineEdit* lineEdit_; 
      
+
+};
 
 }
