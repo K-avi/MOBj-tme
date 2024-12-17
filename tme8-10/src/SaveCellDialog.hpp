@@ -3,7 +3,7 @@
 
 class SaveCellDialog : public QDialog {
 
-    Q_OBJECT ; 
+    Q_OBJECT 
     
     public :
 
@@ -14,7 +14,6 @@ class SaveCellDialog : public QDialog {
 
     protected: 
 
-    QlineEdit* lineEdit_; 
-     
+    QLineEdit* lineEdit_; 
 
-}
+};
