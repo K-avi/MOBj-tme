@@ -24,7 +24,12 @@ namespace Netlist {
         name_(n),
         terms_(vector<Term*>()),
         position_()
-        {
+        {       
+                if(!model){
+                        cerr << "[ERROR] Instance::Instance() : model is NULL" << endl;
+                        return;
+                }
+                cout << "model : " << model << endl  ;
                 for(auto term : model->getTerms()){
                         terms_.push_back(new Term(this, term));
                 }
@@ -99,6 +104,12 @@ namespace Netlist {
                 position_ = Point(p.getX(),p.getY());
                 for(Term* t : terms_ ){
                         TermShape* ts = owner_->getSymbol()->getTermShape(t);//recupere termshape 
+                        
+                        if(!ts){
+                                cerr << "Instance::setPosition termShape ptr is Null"  << endl;
+                                return ; 
+                        }
+                        
                         Point p(ts->getX1(), ts->getY1()); //met sa position dans un point
                         p.translate(position_);  //la translate de la position de l'instance
                         t->setPosition(p.getX(),p.getY()); //affecte au terminal la position translatée
@@ -119,9 +130,13 @@ namespace Netlist {
                 string name =  xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"name"));
                 
                 string masterCellName =  xmlCharToString(xmlTextReaderGetAttribute(readerptr, (const xmlChar*)"mastercell"));
+
+                
+                
                 Cell* mastercell = Cell::find(masterCellName);
                 
                 if(mastercell == nullptr){
+                    cout << "mastercellname : " << masterCellName << endl;
                     cout << "[ERROR] Instance::fromXml mastercell not found in list" << endl;
                 }
                 

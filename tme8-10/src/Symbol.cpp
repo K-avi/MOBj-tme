@@ -21,13 +21,26 @@ namespace Netlist {
     }
 
     TermShape* Symbol::getTermShape(Term * t) const {
+        for(auto c : Cell::getAllCells()){
         
-        for( Shape* s : shapes_){
+        auto * sym = c->getSymbol();
+        
+        for( Shape* s : sym->getShapes()){
             if(TermShape* ts = dynamic_cast<TermShape*>(s)){
-                if(ts->getTerm() == t)
+
+                cout << "term is : " << ts->getTerm()->getName()<<endl ;
+                if(ts->getTerm()->getName() == t->getName()){
+                    cerr << "Symbol::getTermShape Found symbol" << endl;
                     return ts;
+                }
+                else{
+                    cerr << "Searching for symbol : " << t->getName() << endl ;  
+                    cerr << "Symbol::getTermShape : non matching term is " << ts->getTerm()->getName() << endl ;
+                }
             }
         }
+        }
+        
         return NULL;
     }
 

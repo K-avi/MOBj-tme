@@ -35,6 +35,13 @@ namespace Netlist {
         virtual QSize minimumSizeHint() const;
         virtual void resizeEvent(QResizeEvent *);
 
+        void goRight();
+        void goLeft();
+        void goUp();
+        void goDown();
+
+        void query(unsigned int flags, QPainter& painter);
+
     protected:
         virtual void paintEvent(QPaintEvent *);
         virtual void keyPressEvent(QKeyEvent *);
@@ -42,6 +49,7 @@ namespace Netlist {
     private:
         Cell *cell_;
         Box viewport_;
+        unsigned InstanceShapes;
     };
 
 

@@ -56,6 +56,7 @@ const QString OpenCellDialog::getCellName() const
     return lineEdit_->text();
 }
 
+/*
 bool OpenCellDialog::run(QString &name)
 {
     OpenCellDialog* cell = new OpenCellDialog(NULL);
@@ -65,7 +66,7 @@ bool OpenCellDialog::run(QString &name)
 
     delete cell ; 
     return (dialogResult == Accepted);
-}
+}*/
 
 
 }

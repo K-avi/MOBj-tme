@@ -14,7 +14,15 @@ class OpenCellDialog : public QDialog {
     public :
 
     OpenCellDialog( QWidget* parent=NULL); 
-    static bool run (QString& name); 
+    static bool run (QString& name){
+        OpenCellDialog* cell = new OpenCellDialog(NULL);
+
+        int dialogResult = cell->exec();
+        name = cell->getCellName();
+
+        delete cell ; 
+        return (dialogResult == Accepted);
+    }
 
     const QString getCellName() const; 
     void setCellName(const QString&); 

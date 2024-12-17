@@ -130,11 +130,25 @@ namespace Netlist {
       viewport_.translate(Point(20, 0));
       repaint();
   }
+  void CellWidget::goLeft() {
+      viewport_.translate(Point(-20, 0));
+      repaint();
+  }
 
   void CellWidget::goUp() {
       viewport_.translate(Point(0, 20));
       repaint();
   }
+
+  void CellWidget::goDown() {
+      viewport_.translate(Point(0, -20));
+      repaint();
+  }
+
+  inline QRect CellWidget::boxToScreenRect(const Box & box) const{
+      return QRect(box.getX1() - viewport_.getX1(), viewport_.getY2() - box.getY2(), box.getWidth(), box.getHeight());
+  }//not tested
+
   
   void CellWidget::query(unsigned int flags, QPainter& painter) {
     if (!cell_ || !flags) return;

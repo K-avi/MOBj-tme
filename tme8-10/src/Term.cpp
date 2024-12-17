@@ -1,8 +1,10 @@
 #include "Term.hpp"
 #include "Cell.hpp"
 #include "Net.hpp"
+#include "Symbol.hpp"
 #include <iostream>
 #include <string>
+#include "Shape.hpp"
 
 namespace Netlist {
         
@@ -160,6 +162,8 @@ namespace Netlist {
 		       
                 Term * ret = new Term(cell, name, stringToDirection(direction));
                 ret->setPosition(x,y);
+                
+                //new TermShape(cell->getSymbol(), name, x, y, TermShape::TopLeft);
 
                 return ret;
         }

@@ -15,12 +15,17 @@ namespace Netlist {
     public:
         CellViewer(QWidget* parent = NULL);
 
-        virtual ~CellViewer(); 
+        //virtual ~CellViewer(); 
+        //~CellViewer(); 
+
         void setCell(Netlist::Cell*); 
         Cell* getCell() const;
+        
 
         public slots :
         void saveCell();
+        void quit();
+        void openCell();
 
         private : 
         CellWidget* cellWidget_;

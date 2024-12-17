@@ -5,6 +5,10 @@
 #include <QVBoxLayout>
 #include "SaveCellDialog.hpp"
 
+
+namespace Netlist
+{
+    
 SaveCellDialog::SaveCellDialog(QWidget *parent)
     : QDialog(parent), lineEdit_(NULL)
 {
@@ -64,3 +68,5 @@ bool SaveCellDialog::run(QString &name)
     return (dialogResult == Accepted);
 }
 
+
+}

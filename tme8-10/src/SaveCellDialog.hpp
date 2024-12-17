@@ -1,6 +1,8 @@
 #include <QDialog>
 #include <QLineEdit>
 
+namespace Netlist{
+
 class SaveCellDialog : public QDialog {
 
     Q_OBJECT 
@@ -8,6 +10,7 @@ class SaveCellDialog : public QDialog {
     public :
 
     SaveCellDialog( QWidget* parent=NULL); 
+    void setCellName(const QString &name);
     bool run (QString& name); 
 
     const QString getCellName() const ; 
@@ -17,3 +20,5 @@ class SaveCellDialog : public QDialog {
     QLineEdit* lineEdit_; 
 
 };
+
+}
