@@ -68,5 +68,4 @@ bool OpenCellDialog::run(QString &name)
 }
 
 
-
 }

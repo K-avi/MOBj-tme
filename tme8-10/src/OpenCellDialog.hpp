@@ -1,3 +1,6 @@
+#ifndef OPENCELLDIALOG_H
+#define OPENCELLDIALOG_H
+
 #include <QDialog>
 #include <QLineEdit>
 
@@ -24,3 +27,5 @@ class OpenCellDialog : public QDialog {
 };
 
 }
+
+#endif 
