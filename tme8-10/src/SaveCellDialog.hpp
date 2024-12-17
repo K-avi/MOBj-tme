@@ -1,4 +1,5 @@
 #include <QDialog>
+#include <QLineEdit>
 
 class SaveCellDialog : public QDialog {
 
@@ -10,7 +11,6 @@ class SaveCellDialog : public QDialog {
     bool run (QString& name); 
 
     const QString getCellName() const ; 
-    void setCellName(const QString&); 
 
     protected: 
 
