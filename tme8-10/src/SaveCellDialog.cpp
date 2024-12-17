@@ -3,15 +3,15 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include "SaveCellDialog.h"
+#include "SaveCellDialog.hpp"
 
 SaveCellDialog::SaveCellDialog(QWidget *parent)
     : QDialog(parent), lineEdit_(NULL)
 {
-    setWindowTitle(tr("Save ␣ Cell"));
+    setWindowTitle(tr("Save Cell"));
 
     QLabel *label = new QLabel();
-    label->setText(tr("Enter ␣ Cell ␣ name ␣ (without ␣ extension)"));
+    label->setText(tr("Enter Cell name (without extension)"));
 
     lineEdit_ = new QLineEdit();
     lineEdit_->setMinimumWidth(400);
