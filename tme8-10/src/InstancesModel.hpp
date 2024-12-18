@@ -1,5 +1,9 @@
 #pragma once
 #include <QAbstractTableModel>
+#include "Cell.hpp"
+
+namespace Netlist {
+
 
 class InstancesModel : public QAbstractTableModel {
     Q_OBJECT
@@ -18,3 +22,4 @@ private:
     Cell *cell_;
 };
 
+}

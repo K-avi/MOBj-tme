@@ -1,3 +1,6 @@
+#ifndef CELL_VIEWER_H
+#define CELL_VIEWER_H
+
 #include <QMainWindow>
 #include <cstddef>
 #include "SaveCellDialog.hpp"
@@ -26,10 +29,14 @@ namespace Netlist {
         void saveCell();
         void quit();
         void openCell();
+        void showInstancesWidget();
 
         private : 
         CellWidget* cellWidget_;
         SaveCellDialog* saveCellDialog_;
+        //InstancesWidget* instanceWidget_;
 
     };
 }
+
+#endif

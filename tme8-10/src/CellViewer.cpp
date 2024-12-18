@@ -3,6 +3,7 @@
 #include <qt5/QtCore/qobjectdefs.h>
 #include <qwidget.h>
 #include <iostream>
+#include "InstancesWidget.hpp"
 #include "OpenCellDialog.hpp"
 
 using namespace Netlist;
@@ -40,16 +41,35 @@ CellViewer::CellViewer(QWidget* parent)
     connect(action, SIGNAL(triggered()), this, SLOT(openCell()));
 
 
+
+
+    action = new QAction("List instances", this);
+    action->setStatusTip("Show instances");
+    action->setShortcut(QKeySequence("CTRL+I"));
+    action->setVisible(true);
+    fileMenu->addAction(action);
+    connect(action, SIGNAL(triggered()), this, SLOT(showInstancesWidget()));
+
     action = new QAction("Quit", this);
     action->setStatusTip("Exit the Netlist Viewer");
     action->setShortcut(QKeySequence("CTRL+Q"));
     action->setVisible(true);
     fileMenu->addAction(action);
     connect(action, SIGNAL(triggered()), this, SLOT(quit()));
-
     
-
     setWindowTitle("CellViewer");
+}
+
+void CellViewer::showInstancesWidget(){
+
+    if  (getCell() )
+        cout << "current cell is : " << getCell()->getName() << endl;
+    else cout << "current cell is NULL" << endl;
+    InstancesWidget::showI(cellWidget_, this, getCell());
+
+    if  (getCell() )
+        cout << "end current cell is : " << getCell()->getName() << endl;
+    else cout << "current cell is NULL" << endl;
 }
 
 void CellViewer::quit(){

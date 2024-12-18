@@ -4,23 +4,28 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QTableView>
+#include <qdialog.h>
 #include <qt5/QtCore/qobjectdefs.h>
-#include "InstanceModel.hpp"
+#include "CellWidget.hpp"
+#include "InstancesModel.hpp"
 #include "CellViewer.hpp"
+#include <QDialog>
+#include <qwidget.h>
 
 namespace Netlist {
 
-    class InstancesWidget : public QWidget{
+    class InstancesWidget : public QWidget{ 
         Q_OBJECT 
 
         public: 
-            InstancesWidget (QWidget* parent=NULL);
+            InstancesWidget (QWidget* parent=NULL, CellViewer* cellViewer=NULL);
             void setCellViewer(CellViewer*);
             int getSelectedRow() const; 
             inline void setCell(Cell*);
 
         public slots: 
             void load(); 
+            static void showI(CellWidget* parent, CellViewer* cellViewer, Cell* cell);
 
         private : 
             CellViewer* cellViewer_; 
