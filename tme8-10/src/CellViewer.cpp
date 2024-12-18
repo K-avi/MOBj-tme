@@ -5,6 +5,7 @@
 #include <iostream>
 #include "InstancesWidget.hpp"
 #include "OpenCellDialog.hpp"
+#include "CellsLib.hpp"
 
 using namespace Netlist;
 using namespace std; 
@@ -40,15 +41,19 @@ CellViewer::CellViewer(QWidget* parent)
     fileMenu->addAction(action);
     connect(action, SIGNAL(triggered()), this, SLOT(openCell()));
 
-
-
-
     action = new QAction("List instances", this);
     action->setStatusTip("Show instances");
     action->setShortcut(QKeySequence("CTRL+I"));
     action->setVisible(true);
     fileMenu->addAction(action);
     connect(action, SIGNAL(triggered()), this, SLOT(showInstancesWidget()));
+
+    action = new QAction("List cells", this);
+    action->setStatusTip("Show all cells");
+    action->setShortcut(QKeySequence("CTRL+C"));
+    action->setVisible(true);
+    fileMenu->addAction(action);
+    connect(action, SIGNAL(triggered()), this, SLOT(showCells()));
 
     action = new QAction("Quit", this);
     action->setStatusTip("Exit the Netlist Viewer");
@@ -74,6 +79,10 @@ void CellViewer::showInstancesWidget(){
 
 void CellViewer::quit(){
     close();
+}
+
+void CellViewer::showCells(){
+    CellsLib::showCells(this);
 }
 
 void CellViewer::openCell()

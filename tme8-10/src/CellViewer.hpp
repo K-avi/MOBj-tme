@@ -30,6 +30,7 @@ namespace Netlist {
         void quit();
         void openCell();
         void showInstancesWidget();
+        void showCells();
 
         private : 
         CellWidget* cellWidget_;
