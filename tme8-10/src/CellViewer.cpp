@@ -15,8 +15,8 @@ CellViewer::CellViewer(QWidget* parent)
     : QMainWindow(parent)
     , cellWidget_(NULL)
     , saveCellDialog_(NULL)
+    , cellsLib_(new CellsLib(NULL, this))
 {   
-
 
     cellWidget_ = new CellWidget();
     saveCellDialog_ = new SaveCellDialog(this);
@@ -61,8 +61,17 @@ CellViewer::CellViewer(QWidget* parent)
     action->setVisible(true);
     fileMenu->addAction(action);
     connect(action, SIGNAL(triggered()), this, SLOT(quit()));
+
+    //connect cellLoaded() to CellsModel::updateDatas() to update the view
+    
+    connect(this, SIGNAL(cellLoaded()), cellsLib_->getBaseModel(), SLOT(updateDatas()));
+    
     
     setWindowTitle("CellViewer");
+}
+
+void CellViewer::updateData(){
+    cellsLib_->getBaseModel()->updateDatas();
 }
 
 void CellViewer::showInstancesWidget(){
@@ -82,7 +91,8 @@ void CellViewer::quit(){
 }
 
 void CellViewer::showCells(){
-    CellsLib::showCells(this);
+
+    CellsLib::showCells(this, cellsLib_);
 }
 
 void CellViewer::openCell()
@@ -92,8 +102,9 @@ void CellViewer::openCell()
     {
         Cell* cell = Cell::find(cellName.toStdString());
         if(cell == NULL)
-        {
+        {    
             cell = Cell::load(cellName.toStdString());
+            cellLoaded();
         }
         if(cell != NULL)
         {

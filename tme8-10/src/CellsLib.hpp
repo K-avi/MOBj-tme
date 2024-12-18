@@ -18,7 +18,7 @@ namespace Netlist{
             int getSelectedRow() const;
             inline CellsModel* getBaseModel(){return baseModel_;}
 
-            static void showCells(CellViewer*);
+            static void showCells(CellViewer*, CellsLib*);
 
         public slots: 
             void load();

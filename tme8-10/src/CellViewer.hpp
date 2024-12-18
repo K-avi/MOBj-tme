@@ -7,9 +7,10 @@
 #include "CellWidget.hpp"
 #include "Cell.hpp"
 
+
 namespace Netlist {
 
-
+    class CellsLib;
     class CellViewer : public QMainWindow
     {
     Q_OBJECT
@@ -31,11 +32,18 @@ namespace Netlist {
         void openCell();
         void showInstancesWidget();
         void showCells();
+        void updateData();
+
+        signals :
+        void cellLoaded();
+       
+
 
         private : 
         CellWidget* cellWidget_;
         SaveCellDialog* saveCellDialog_;
         //InstancesWidget* instanceWidget_;
+        CellsLib* cellsLib_;
 
     };
 }

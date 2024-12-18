@@ -104,9 +104,8 @@ void CellsLib::load() {
     
 }
 
-void CellsLib::showCells(CellViewer* cellViewer) {
+void CellsLib::showCells(CellViewer* cellViewer, CellsLib* clib) {
 
-    CellsLib * clib = new CellsLib(NULL, cellViewer);
 
     clib->baseModel_->setCells(Cell::getAllCells());
     
@@ -115,6 +114,8 @@ void CellsLib::showCells(CellViewer* cellViewer) {
     clib->activateWindow();
 
     clib->show();
+
+    return ;
 }//TODO
 
 void CellsLib::setCellViewer(CellViewer*c){

@@ -56,6 +56,12 @@ Cell* CellsModel::getModel(int row) {
     return cells_[row];
 }
 
+void CellsModel::updateDatas() {
+    emit layoutAboutToBeChanged();
+    cells_ = Cell::getAllCells();
+    emit layoutChanged();
+}
+
 
 /*
 Cell *CellsModel::getModel(int row) {
