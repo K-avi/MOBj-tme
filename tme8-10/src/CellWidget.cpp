@@ -7,7 +7,9 @@
 #include  <QFont>
 #include  <QApplication>
 #include <qpainter.h>
+#include <qt5/QtCore/qline.h>
 #include <qt5/QtCore/qnamespace.h>
+#include <qt5/QtCore/qpoint.h>
 #include <qt5/QtGui/qbrush.h>
 #include <qt5/QtGui/qfont.h>
 #include  "CellWidget.hpp"
@@ -84,6 +86,13 @@ namespace Netlist {
   }
 
 
+void centerPoint(Point* p){
+    p->translate(Point(100, 100));
+}
+
+void centerBox(Box* b){
+    b->translate(Point(100, 100));
+}
 
 
 void CellWidget::paintSymbol(QPainter* painter, Cell* mastercell, Point& translation){
@@ -91,50 +100,70 @@ void CellWidget::paintSymbol(QPainter* painter, Cell* mastercell, Point& transla
     QString cellName = "NULL";
     if (mastercell) cellName = mastercell->getName().c_str();
 
-    
+
+    QPen pen = painter->pen();
+    pen.setWidth(3);
+    pen.setColor(Qt::green);
+    painter->setPen(pen);
+
     //draw the symbol of the cell
     if (mastercell) {
-        painter->setPen(Qt::black);
         for(auto & s : mastercell->getSymbol()->getShapes()){
             BoxShape* boxShape = dynamic_cast<BoxShape*>(s);
             if (boxShape) {
-                painter->setPen(Qt::black);
+            
                 Box box = boxShape->getBoundingBox();
                 box.translate(translation);
                 painter->drawRect(boxToScreenRect(box));
                 
             } else if (LineShape* lineShape = dynamic_cast<LineShape*>(s)) {
-                cout << "Drawing line: " <<  endl;
-                painter->setPen(Qt::blue);
+             
                 Box box = lineShape->getBoundingBox();
                 box.translate(translation);
                 
                 Point p1 = Point(box.getX1(), box.getY1());
-                //p1.translate(translation);
                 Point p2 = Point(box.getX2(), box.getY2());
-              //  p2.translate(translation);
                 painter->drawLine(pointToScreenPoint(p1), pointToScreenPoint(p2));
             } else if (EllipseShape* ellipseShape = dynamic_cast<EllipseShape*>(s)) {
-                
-                cout << "Drawing ellipse: " <<  endl;
-                painter->setPen(Qt::red);
+                       
                 Box box = ellipseShape->getBoundingBox();
                 box.translate(translation);
                 painter->drawEllipse(boxToScreenRect(box));
-
-            } else if (ArcShape* arcShape = dynamic_cast<ArcShape*>(s)) {
-                painter->setPen(Qt::red);
+            } else if (ArcShape* arcShape = dynamic_cast<ArcShape*>(s)) {  
                 Box box = arcShape->getBoundingBox();
                 box.translate(translation);
                 painter->drawArc(boxToScreenRect(box), arcShape->getStart()*16, arcShape->getSpan()*16);
-            } else if (TermShape* termShape = dynamic_cast<TermShape*>(s)) {
-                painter->setPen(Qt::yellow);
+            }
+        }
+
+        pen.setColor(Qt::red);
+        pen.setWidth(1);
+        pen.setBrush(Qt::red);
+        painter->setPen(pen);
+
+        for(auto & s : mastercell->getSymbol()->getShapes()){
+            if (TermShape* termShape = dynamic_cast<TermShape*>(s)) {
+
+                pen.setColor(Qt::red);
+                pen.setBrush(Qt::red);
+                painter->setPen(pen);
+                  
                 Term* term = termShape->getTerm();
                 if (!term) continue;
                 Point p = Point(termShape->getX1(), termShape->getY1());
                 p.translate(translation);
+                //centerPoint(&p);
+                p.setY(p.getY() + 10);
 
-                painter->drawText(pointToScreenPoint(p), term->getName().c_str());
+                Box box = termShape->getBoundingBox();
+                //centerBox(&box);
+                box.translate(translation);
+
+
+                painter->drawRect(boxToScreenRect(box));
+                pen.setColor(Qt::black);
+                painter->setPen(pen);
+                painter->drawText(pointToScreenPoint(p), term->getName().c_str());      
             }
         }
     }
@@ -154,7 +183,33 @@ void  CellWidget::paintEvent ( QPaintEvent* event ){
     
     //draw the symbol of the cell
     for(auto & net : cell_->getNets()){
+       
+        for(auto * line : net->getLines()){
 
+            painter.setPen(Qt::blue);
+            
+            Point p1 = line->getSourcePosition();
+            centerPoint(&p1);
+            Point p2 = line->getTargetPosition();
+            centerPoint(&p2);
+
+            painter.setPen(Qt::blue);
+            painter.drawLine(pointToScreenPoint(p1), pointToScreenPoint(p2));
+
+            for(auto* line2 : net->getLines()){
+                if(line == line2) continue;
+                if( (line->getSourcePosition() == line2->getSourcePosition()) && !(line->getTargetPosition() == line2->getTargetPosition()) ){
+                    painter.setPen(Qt::blue);
+                    painter.setBrush(Qt::blue);
+
+                    Point p = line->getSourcePosition();
+                    centerPoint(&p);
+
+                    painter.drawEllipse(pointToScreenPoint(p), 5, 5);
+                }
+            }
+
+        }
         //draw every node of the net 
         for(auto * node : net->getNodes()){
 
@@ -163,7 +218,9 @@ void  CellWidget::paintEvent ( QPaintEvent* event ){
             NodeTerm* nt = dynamic_cast<NodeTerm*>(node);
             if(np){//a point simply contains it's coordinates in the net so we draw it
                 Point p = np->getPosition();
-                cout << "Drawing point: " << p.getX() << " " << p.getY() << endl;
+                centerPoint(&p);
+
+                painter.setPen(Qt::black);
                 painter.drawPoint(pointToScreenPoint(p));
             }else if(nt){//a term is either an instance of a cell or a "internal terminal??" 
             //if the term is an instance we need to draw it's associated symbol 
@@ -178,24 +235,35 @@ void  CellWidget::paintEvent ( QPaintEvent* event ){
                     Cell* mastercell = i->getMasterCell();
                     //get the shapes of the symbol
                     Point p = i->getPosition();
+                    centerPoint(&p);
+
+
+                    QPen pencopy = painter.pen();
                     paintSymbol(&painter, mastercell, p);
+
+                    painter.setPen(pencopy);
 
                 }else{
                     //find the term in the cell 
                     Term* term = cell_->getTerm(t->getName());
                     //draw the name of the term at it's position in the cell's thing
-                    painter.drawText(pointToScreenPoint(term->getPosition()), term->getName().c_str());
-                }
-            }
-        }
+                    painter.setPen(Qt::red);
+                    painter.setBrush(Qt::red);
 
-        for(auto * line : net->getLines()){
-            //draw an ugly diagonal line
-            //will fix later
-            Point p1 = line->getSourcePosition();
-            Point p2 = line->getTargetPosition();
-            painter.drawLine(pointToScreenPoint(p1), pointToScreenPoint(p2));
-        }
+                    Point p = term->getPosition();
+                    centerPoint(&p);
+                    Box box = Box(p.getX(), p.getY(), p.getX() , p.getY());
+
+                    p.translate(Point(0, 12));
+                    painter.drawText(pointToScreenPoint(p), term->getName().c_str());
+
+                    box.inflate(10);
+                    painter.drawRect(boxToScreenRect(box));
+                }
+
+                
+            }     
+        }  
     }
   }
   
@@ -226,21 +294,21 @@ void  CellWidget::paintEvent ( QPaintEvent* event ){
     event->accept();
   }
 
-  void CellWidget::goRight() {
+  void CellWidget::goLeft() {
       viewport_.translate(Point(20, 0));
       repaint();
   }
-  void CellWidget::goLeft() {
+  void CellWidget::goRight() {
       viewport_.translate(Point(-20, 0));
       repaint();
   }
 
-  void CellWidget::goUp() {
+  void CellWidget::goDown() {
       viewport_.translate(Point(0, 20));
       repaint();
   }
 
-  void CellWidget::goDown() {
+  void CellWidget::goUp() {
       viewport_.translate(Point(0, -20));
       repaint();
   }

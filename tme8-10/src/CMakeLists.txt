@@ -31,11 +31,17 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
                                       Shape.hpp
                                       Symbol.hpp
                                       Cell.hpp
+                                      
                        )
 
                     set( mocIncludes  SaveCellDialog.hpp
                                       CellWidget.hpp
                                       CellViewer.hpp
+                                      InstancesWidget.hpp
+                                      InstancesModel.hpp
+				      CellsModel.hpp
+				      CellsLib.hpp
+				      OpenCellDialog.hpp
                        )
 
                     set( cpps         Indentation.cpp
@@ -51,14 +57,19 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
                                       Symbol.cpp
                                       Cell.cpp
                                       SaveCellDialog.cpp
+				      OpenCellDialog.cpp
+				      CellsLib.cpp
+				      CellsModel.cpp
                                       CellWidget.cpp
                                       CellViewer.cpp
+                                      InstancesWidget.cpp
+                                      InstancesModel.cpp
                                       Main.cpp
                        )
 
            qt_wrap_cpp( mocCpps      ${mocIncludes} )
 
          add_executable( tme810       ${cpps} ${mocCpps} )
-  target_link_libraries( tme810       ${QT_LIBRARIES} Qt6::Gui ${LIBXML2_LIBRARIES} )
+  target_link_libraries( tme810       ${QT_LIBRARIES} Qt6::Core Qt6::Widgets Qt6::Gui ${LIBXML2_LIBRARIES} )
                 install( TARGETS      tme810                      DESTINATION bin )
                 install( FILES        ${includes} ${mocIncludes}  DESTINATION include )

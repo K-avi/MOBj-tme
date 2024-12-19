@@ -50,7 +50,7 @@ CellViewer::CellViewer(QWidget* parent)
 
     action = new QAction("List cells", this);
     action->setStatusTip("Show all cells");
-    action->setShortcut(QKeySequence("CTRL+C"));
+    action->setShortcut(QKeySequence("CTRL+L"));
     action->setVisible(true);
     fileMenu->addAction(action);
     connect(action, SIGNAL(triggered()), this, SLOT(showCells()));

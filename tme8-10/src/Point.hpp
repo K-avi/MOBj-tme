@@ -36,6 +36,12 @@ namespace Netlist {
     inline    std::ostream& operator<< ( std::ostream& stream, const Point& p )
     { stream << "<Point " << p.getX() << " " << p.getY() << ">"; return stream; }
 
+    inline bool operator==(const Point &p1 , const Point & p){
+        return ( ( (p1.getX() == p.getX()) 
+                && (p1.getY() == p.getY())) 
+                || ((p1.getX() == p.getY()) 
+                &&(p1.getY() == p.getX()) ));
+    }
 
 }    // Netlist namespace.
 

@@ -79,6 +79,11 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/SaveCellDialog.hpp"
     "/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CellWidget.hpp"
     "/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CellViewer.hpp"
+    "/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/InstancesWidget.hpp"
+    "/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/InstancesModel.hpp"
+    "/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CellsModel.hpp"
+    "/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CellsLib.hpp"
+    "/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/OpenCellDialog.hpp"
     )
 endif()
 
