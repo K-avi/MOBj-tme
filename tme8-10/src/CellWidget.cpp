@@ -13,11 +13,14 @@
 #include  "CellWidget.hpp"
 #include "Box.hpp"
 #include  "Instance.hpp"
+#include "Node.hpp"
 #include "Point.hpp"
 #include  "Symbol.hpp"
 #include  "Shape.hpp"
 #include  "Cell.hpp"
 #include "Term.hpp"
+#include "Net.hpp"
+#include "Line.hpp"
 
 namespace Netlist {
 
@@ -80,60 +83,65 @@ namespace Netlist {
       std::cerr << "CellWidget::resizeEvent() viewport_: " << viewport_ << std::endl;
   }
 
-/*
-  void CellWidget::drawTerm(Term* term, QPainter& painter) {
+
+
+
+void CellWidget::paintSymbol(QPainter* painter, Cell* mastercell, Point& translation){
     QFont  bigFont = QFont( "URW Bookman L", 12 );
-    
-
     QString cellName = "NULL";
-    if (cell_) cellName = cell_->getName().c_str();
+    if (mastercell) cellName = mastercell->getName().c_str();
 
-    int frameWidth  = 460;
-    int frameHeight = 100;
-    QRect nameRect ( (size().width ()-frameWidth )/2
-                   , (size().height()-frameHeight)/2
-                   , frameWidth
-                   , frameHeight
-                   );
-    //draw the cell
-    if (cell_) {
-        for(auto & s : cell_->getSymbol()->getShapes()){
+    
+    //draw the symbol of the cell
+    if (mastercell) {
+        painter->setPen(Qt::black);
+        for(auto & s : mastercell->getSymbol()->getShapes()){
             BoxShape* boxShape = dynamic_cast<BoxShape*>(s);
             if (boxShape) {
+                painter->setPen(Qt::black);
                 Box box = boxShape->getBoundingBox();
-                painter.drawRect(boxToScreenRect(box));
+                box.translate(translation);
+                painter->drawRect(boxToScreenRect(box));
+                
             } else if (LineShape* lineShape = dynamic_cast<LineShape*>(s)) {
+                cout << "Drawing line: " <<  endl;
+                painter->setPen(Qt::blue);
                 Box box = lineShape->getBoundingBox();
+                box.translate(translation);
+                
                 Point p1 = Point(box.getX1(), box.getY1());
+                //p1.translate(translation);
                 Point p2 = Point(box.getX2(), box.getY2());
-                painter.drawLine(pointToScreenPoint(p1), pointToScreenPoint(p2));
+              //  p2.translate(translation);
+                painter->drawLine(pointToScreenPoint(p1), pointToScreenPoint(p2));
             } else if (EllipseShape* ellipseShape = dynamic_cast<EllipseShape*>(s)) {
+                
+                cout << "Drawing ellipse: " <<  endl;
+                painter->setPen(Qt::red);
                 Box box = ellipseShape->getBoundingBox();
-                painter.drawEllipse(boxToScreenRect(box));
+                box.translate(translation);
+                painter->drawEllipse(boxToScreenRect(box));
+
             } else if (ArcShape* arcShape = dynamic_cast<ArcShape*>(s)) {
+                painter->setPen(Qt::red);
                 Box box = arcShape->getBoundingBox();
-                painter.drawArc(boxToScreenRect(box), arcShape->getStart(), arcShape->getSpan());
+                box.translate(translation);
+                painter->drawArc(boxToScreenRect(box), arcShape->getStart()*16, arcShape->getSpan()*16);
             } else if (TermShape* termShape = dynamic_cast<TermShape*>(s)) {
+                painter->setPen(Qt::yellow);
                 Term* term = termShape->getTerm();
                 if (!term) continue;
-                Point termPos = cell_->getSymbol()->getTermPosition(term);
-                drawTerm(term, painter);
-                painter.drawText(pointToScreenPoint(termPos), term->getName().c_str());
+                Point p = Point(termShape->getX1(), termShape->getY1());
+                p.translate(translation);
 
+                painter->drawText(pointToScreenPoint(p), term->getName().c_str());
             }
         }
-        painter.drawRect(boxToScreenRect(cell_->getSymbol()->getBoundingBox()));
-        
     }
-  }*/
+}
 
-
-
-  void  CellWidget::paintEvent ( QPaintEvent* event )
-  {
-    
+void  CellWidget::paintEvent ( QPaintEvent* event ){
     QFont  bigFont = QFont( "URW Bookman L", 12 );
-
     QString cellName = "NULL";
     if (cell_) cellName = cell_->getName().c_str();
 
@@ -142,63 +150,52 @@ namespace Netlist {
     painter.setBackground( QBrush( Qt::white ) );
     painter.eraseRect    ( QRect( QPoint(0,0), size() ) );
 
-    //int frameWidth  = 460;
-    //int frameHeight = 100;
-    /*QRect nameRect ( (size().width ()-frameWidth )/2
-                   , (size().height()-frameHeight)/2
-                   , frameWidth
-                   , frameHeight
-                   );
-                   */
     painter.setPen  ( Qt::black );
-    //painter.drawRect( nameRect);
-    //painter.drawText( nameRect, Qt::AlignCenter, cellName );*/
-
-
+    
     //draw the symbol of the cell
-    if (cell_) {
-        painter.setPen(Qt::black);
-       // painter.setBrush(Qt::black);
-        for(auto & s : cell_->getSymbol()->getShapes()){
-            BoxShape* boxShape = dynamic_cast<BoxShape*>(s);
-            if (boxShape) {
-                painter.setPen(Qt::black);
-                Box box = boxShape->getBoundingBox();
-                painter.drawRect(boxToScreenRect(box));
-                
-            } else if (LineShape* lineShape = dynamic_cast<LineShape*>(s)) {
-                cout << "Drawing line: " <<  endl;
-                painter.setPen(Qt::blue);
-                Box box = lineShape->getBoundingBox();
-                
-                //box.translate(bref.getX1(), bref.getY1());
+    for(auto & net : cell_->getNets()){
 
-                Point p1 = Point(box.getX1(), box.getY1());
-                Point p2 = Point(box.getX2(), box.getY2());
-                painter.drawLine(pointToScreenPoint(p1), pointToScreenPoint(p2));
-            } else if (EllipseShape* ellipseShape = dynamic_cast<EllipseShape*>(s)) {
+        //draw every node of the net 
+        for(auto * node : net->getNodes()){
+
+            //nodes are either terms or point so we need to cast them to the right type
+            NodePoint* np = dynamic_cast<NodePoint*>(node);
+            NodeTerm* nt = dynamic_cast<NodeTerm*>(node);
+            if(np){//a point simply contains it's coordinates in the net so we draw it
+                Point p = np->getPosition();
+                cout << "Drawing point: " << p.getX() << " " << p.getY() << endl;
+                painter.drawPoint(pointToScreenPoint(p));
+            }else if(nt){//a term is either an instance of a cell or a "internal terminal??" 
+            //if the term is an instance we need to draw it's associated symbol 
+            //if it's a terminal we need to draw it's name at it's position
+                Term* t = nt->getTerm();
                 
-                cout << "Drawing ellipse: " <<  endl;
-                painter.setPen(Qt::red);
-                Box box = ellipseShape->getBoundingBox();
-                painter.drawEllipse(boxToScreenRect(box));
+                if(t->getInstance()){
+                    
+                    //get the instance of the term
+                    Instance* i = t->getInstance();
+                    //get the symbol of the instance
+                    Cell* mastercell = i->getMasterCell();
+                    //get the shapes of the symbol
+                    Point p = i->getPosition();
+                    paintSymbol(&painter, mastercell, p);
 
-
-            } else if (ArcShape* arcShape = dynamic_cast<ArcShape*>(s)) {
-                painter.setPen(Qt::red);
-                Box box = arcShape->getBoundingBox();
-                painter.drawArc(boxToScreenRect(box), arcShape->getStart()*16, arcShape->getSpan()*16);
-            } else if (TermShape* termShape = dynamic_cast<TermShape*>(s)) {
-                painter.setPen(Qt::yellow);
-                Term* term = termShape->getTerm();
-                if (!term) continue;
-                painter.drawText(pointToScreenPoint(Point(termShape->getX1(),termShape->getY1())), term->getName().c_str());
+                }else{
+                    //find the term in the cell 
+                    Term* term = cell_->getTerm(t->getName());
+                    //draw the name of the term at it's position in the cell's thing
+                    painter.drawText(pointToScreenPoint(term->getPosition()), term->getName().c_str());
+                }
             }
         }
-      //  painter.setPen(Qt::black);
-      //  painter.fillRect(boxToScreenRect(cell_->getSymbol()->getBoundingBox()), QBrush(QColor(128,128,255,128)));
-      //  painter.drawRect(boxToScreenRect(cell_->getSymbol()->getBoundingBox()));
-        
+
+        for(auto * line : net->getLines()){
+            //draw an ugly diagonal line
+            //will fix later
+            Point p1 = line->getSourcePosition();
+            Point p2 = line->getTargetPosition();
+            painter.drawLine(pointToScreenPoint(p1), pointToScreenPoint(p2));
+        }
     }
   }
   

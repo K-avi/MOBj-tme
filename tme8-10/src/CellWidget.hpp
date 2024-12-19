@@ -81,7 +81,7 @@ namespace Netlist {
         Cell *cell_;
         Box viewport_;
         unsigned InstanceShapes;
-      //  void drawTerm(Term* term, QPainter& painter);
+       void paintSymbol(QPainter* qpainter, Cell* event, Point& translation);
     };
 
 
