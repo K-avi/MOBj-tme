@@ -35,7 +35,12 @@ namespace {
 #ifdef QT_MOC_HAS_STRINGDATA
 struct qt_meta_stringdata_CLASSNetlistSCOPECellWidgetENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSNetlistSCOPECellWidgetENDCLASS = QtMocHelpers::stringData(
-    "Netlist::CellWidget"
+    "Netlist::CellWidget",
+    "goRight",
+    "",
+    "goLeft",
+    "goUp",
+    "goDown"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -48,12 +53,24 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNetlistSCOPECellWidgetENDCLASS[]
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
+
+ // slots: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    0,   38,    2, 0x0a,    1 /* Public */,
+       3,    0,   39,    2, 0x0a,    2 /* Public */,
+       4,    0,   40,    2, 0x0a,    3 /* Public */,
+       5,    0,   41,    2, 0x0a,    4 /* Public */,
+
+ // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -66,16 +83,32 @@ Q_CONSTINIT const QMetaObject Netlist::CellWidget::staticMetaObject = { {
     nullptr,
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSNetlistSCOPECellWidgetENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<CellWidget, std::true_type>
+        QtPrivate::TypeAndForceComplete<CellWidget, std::true_type>,
+        // method 'goRight'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'goLeft'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'goUp'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'goDown'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
 
 void Netlist::CellWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    (void)_o;
-    (void)_id;
-    (void)_c;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<CellWidget *>(_o);
+        (void)_t;
+        switch (_id) {
+        case 0: _t->goRight(); break;
+        case 1: _t->goLeft(); break;
+        case 2: _t->goUp(); break;
+        case 3: _t->goDown(); break;
+        default: ;
+        }
+    }
     (void)_a;
 }
 
@@ -95,6 +128,17 @@ void *Netlist::CellWidget::qt_metacast(const char *_clname)
 int Netlist::CellWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 4)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 4;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 4)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 4;
+    }
     return _id;
 }
 QT_WARNING_POP

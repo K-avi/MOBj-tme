@@ -1,4 +1,5 @@
 #include "Symbol.hpp"
+#include "Box.hpp"
 #include "Indentation.hpp"
 #include "Term.hpp"
 #include "Shape.hpp"
@@ -116,6 +117,21 @@ namespace Netlist {
         }
         return symbol; 
 
+    }
+
+
+    Box  Symbol::getBoundingBox() const {
+        Box b;
+        for(auto s : shapes_){
+            BoxShape * bs = dynamic_cast<BoxShape*>(s);
+            if(bs){
+                b.setX1(bs->getBoundingBox().getX1());
+                b.setY1(bs->getBoundingBox().getY1());
+                b.setX2(bs->getBoundingBox().getX2());
+                b.setY2(bs->getBoundingBox().getY2());
+            }
+        }
+        return b;   
     }
 
 }

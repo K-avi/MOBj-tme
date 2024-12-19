@@ -18,9 +18,9 @@ int main(int argc, char *argv[]) {
     Cell::load("or2"); 
     Cell::load("and2"); 
 
-    Cell* xor2 = Cell::load("xor2");
+    Cell::load("xor2");
 
-   // Cell* halfadder = Cell::load("halfadder");
+   Cell* halfadder = Cell::load("halfadder");
 
     for(auto s : vdd->getSymbol()->getShapes()){
         if(TermShape* ts = dynamic_cast<TermShape*>(s)){
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 
     QApplication *qa = new QApplication(argc, argv);
     CellViewer *viewer = new CellViewer();
-    viewer->setCell(xor2);
+    viewer->setCell(halfadder);
     viewer->show();
     
     int rvalue = qa->exec();

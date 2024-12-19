@@ -87,6 +87,8 @@ namespace Netlist{
             Box getBoundingBox() const;
             static ArcShape* fromXml(Symbol* owner, xmlTextReaderPtr readerptr);
             void toXml(std::ostream&);
+            inline int getStart() const {return start_;}
+            inline int getSpan() const {return span_;}
         private:
             Box box_;
             int start_;
