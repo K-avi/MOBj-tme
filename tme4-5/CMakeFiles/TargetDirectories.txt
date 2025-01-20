@@ -1,7 +1,0 @@
-/home/ivan/Shortcuts/m1/mobj/tme/tme4-5/CMakeFiles/tme45.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme4-5/CMakeFiles/edit_cache.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme4-5/CMakeFiles/rebuild_cache.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme4-5/CMakeFiles/list_install_components.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme4-5/CMakeFiles/install.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme4-5/CMakeFiles/install/local.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme4-5/CMakeFiles/install/strip.dir

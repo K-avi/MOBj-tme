@@ -1,7 +1,0 @@
-/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CMakeFiles/tme810.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CMakeFiles/edit_cache.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CMakeFiles/rebuild_cache.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CMakeFiles/list_install_components.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CMakeFiles/install.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CMakeFiles/install/local.dir
-/home/ivan/Shortcuts/m1/mobj/tme/tme8-10/src/CMakeFiles/install/strip.dir
